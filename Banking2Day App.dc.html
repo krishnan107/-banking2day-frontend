@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#E9EDF2;font-family:'DM Sans',sans-serif}
+.hscroll::-webkit-scrollbar{display:none}
+@keyframes appfade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+</style>
+<script src="admin-cms/b2d-cms.js"></script>
+</helmet>
+<div style="--blue:#2F7AE0;--blue-d:#1F5FBF;--ink:#14213A;--muted:#7A8699;--line:#EAEEF3;--bg:#F7F9FC;--amber:#F4B942;font-family:'DM Sans',sans-serif;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;background:#E9EDF2">
+  <div id="b2dapp" style="position:relative;width:100%;max-width:440px;min-height:100vh;background:var(--bg);box-shadow:0 0 60px rgba(11,42,74,.12)">
+
+    <!-- TOP BAR -->
+    <div style="position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:14px 18px">
+      <sc-if value="{{ showBack }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ back }}" style="display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;font-family:'Manrope';font-weight:700;font-size:16px;color:var(--ink)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="#14213A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ catTitle }}</button>
+      </sc-if>
+      <sc-if value="{{ showLogo }}" hint-placeholder-val="{{ true }}">
+        <img src="uploads/banking2day-logo.png" alt="Banking2Day" style="height:30px;width:auto"/>
+      </sc-if>
+      <div style="display:flex;align-items:center;gap:14px">
+        <span style="position:relative;width:38px;height:38px;border-radius:50%;background:var(--bg);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9a6 6 0 0112 0c0 5 2 6 2 6H4s2-1 2-6z" stroke="#14213A" stroke-width="2" stroke-linejoin="round"/><path d="M10 19a2 2 0 004 0" stroke="#14213A" stroke-width="2" stroke-linecap="round"/></svg><span style="position:absolute;top:8px;right:9px;width:7px;height:7px;border-radius:50%;background:#E0533B;border:1.5px solid #fff"></span></span>
+        <span style="width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Manrope';font-weight:800;font-size:14px">R</span>
+      </div>
+    </div>
+
+    <div style="padding:0 0 96px">
+
+      <!-- ============ HOME ============ -->
+      <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+      <div style="animation:appfade .25s ease">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 18px 12px">
+          <div style="font-family:'Manrope';font-weight:800;font-size:19px;color:var(--ink)">Pre-approved for you</div>
+          <a href="#" onClick="{{ goPersonal }}" style="text-decoration:none;color:var(--blue);font-weight:700;font-size:13.5px">See all</a>
+        </div>
+        <div class="hscroll" style="display:flex;gap:14px;overflow-x:auto;padding:0 18px 8px;scroll-snap-type:x mandatory">
+          <sc-for list="{{ offers }}" as="o" hint-placeholder-count="3">
+            <div style="scroll-snap-align:start;flex:none;width:300px;border-radius:20px;padding:20px;color:#fff;position:relative;overflow:hidden;background:{{ o.bg }};box-shadow:0 14px 30px rgba(47,122,224,.28)">
+              <div style="position:absolute;right:-30px;top:-30px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,.1)"></div>
+              <span style="display:inline-block;background:var(--amber);color:#5A3F00;font-weight:800;font-size:10.5px;letter-spacing:.4px;padding:5px 10px;border-radius:999px">{{ o.badge }}</span>
+              <div style="font-family:'Manrope';font-weight:800;font-size:32px;margin-top:14px;line-height:1">{{ o.headline }}</div>
+              <div style="font-size:13.5px;opacity:.92;margin-top:6px">{{ o.sub }}</div>
+              <a href="#" onClick="{{ o.action }}" style="display:block;text-align:center;text-decoration:none;background:#fff;color:var(--blue);font-weight:800;font-size:14px;padding:13px;border-radius:12px;margin-top:18px">{{ o.cta }}</a>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:24px 18px 6px">
+          <sc-for list="{{ tiles }}" as="t" hint-placeholder-count="6">
+            <a href="#" onClick="{{ t.action }}" style="text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 10px;display:flex;flex-direction:column;align-items:center;gap:9px" style-active="background:var(--bg)">
+              <span style="width:46px;height:46px;border-radius:13px;background:#EAF1FC;color:var(--blue);display:flex;align-items:center;justify-content:center;font-family:'Manrope';font-weight:800;font-size:13px">{{ t.icon }}</span>
+              <span style="font-size:12.5px;font-weight:700;color:var(--ink);text-align:center">{{ t.label }}</span>
+            </a>
+          </sc-for>
+        </div>
+
+        <div style="margin:18px 18px 0;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;align-items:center;gap:16px">
+          <svg width="76" height="48" viewBox="0 0 200 116" fill="none" style="flex:none"><path d="M20 100 A80 80 0 0 1 35.3 53" stroke="#E5483D" stroke-width="15" stroke-linecap="round"/><path d="M35.3 53 A80 80 0 0 1 75.3 23.9" stroke="#F08C3A" stroke-width="15" stroke-linecap="round"/><path d="M75.3 23.9 A80 80 0 0 1 124.7 23.9" stroke="#F4C430" stroke-width="15" stroke-linecap="round"/><path d="M124.7 23.9 A80 80 0 0 1 164.7 53" stroke="#8BC34A" stroke-width="15" stroke-linecap="round"/><path d="M164.7 53 A80 80 0 0 1 180 100" stroke="#3FA34D" stroke-width="15" stroke-linecap="round"/><line x1="100" y1="100" x2="150" y2="58" stroke="#0B2A4A" stroke-width="6" stroke-linecap="round"/><circle cx="100" cy="100" r="9" fill="#0B2A4A"/></svg>
+          <div style="flex:1"><div style="font-family:'Manrope';font-weight:800;font-size:15px;color:var(--ink)">Know your credit score</div><div style="font-size:12.5px;color:var(--muted);margin-top:2px">Free, monthly refresh, zero impact.</div></div>
+          <a href="#" onClick="{{ tabScore }}" style="text-decoration:none;background:var(--blue);color:#fff;font-weight:700;font-size:13px;padding:9px 14px;border-radius:10px">Check</a>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- ============ CATEGORY DETAIL (multiple options, from admin) ============ -->
+      <sc-if value="{{ isCategory }}" hint-placeholder-val="{{ false }}">
+      <div style="animation:appfade .25s ease;padding:18px 18px 0">
+        <div style="font-size:13.5px;color:var(--muted)">{{ catSub }}</div>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px">
+          <sc-for list="{{ catItems }}" as="p" hint-placeholder-count="4">
+            <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;align-items:center;gap:14px">
+              <span style="width:46px;height:46px;flex:none;border-radius:12px;background:#EAF1FC;color:var(--blue);display:flex;align-items:center;justify-content:center;font-family:'Manrope';font-weight:800;font-size:13px">{{ p.initials }}</span>
+              <div style="flex:1"><div style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">{{ p.provider }}</div><div style="font-size:12.5px;color:var(--muted)">{{ p.highlight }}</div></div>
+              <div style="text-align:right"><div style="font-family:'Manrope';font-weight:800;font-size:14px;color:var(--blue)">{{ p.rate_label }}</div><div style="font-size:11px;color:var(--muted)">from</div></div>
+            </div>
+          </sc-for>
+        </div>
+        <a href="#" onClick="{{ noop }}" style="display:flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;background:#25D366;color:#fff;font-family:'Manrope';font-weight:800;font-size:15px;padding:15px;border-radius:14px;margin-top:18px"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15s-.77.96-.94 1.16c-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.14-.18.19-.3.29-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.07-.12-.27-.2-.57-.35z"/></svg>Apply on WhatsApp</a>
+        <div style="text-align:center;font-size:11.5px;color:var(--muted);margin-top:12px">Options are managed from the admin. {{ sourceNote }}</div>
+      </div>
+      </sc-if>
+
+      <!-- ============ SCORE ============ -->
+      <sc-if value="{{ isScore }}" hint-placeholder-val="{{ false }}">
+      <div style="animation:appfade .25s ease;padding:20px 18px 0">
+        <div style="font-family:'Manrope';font-weight:800;font-size:22px;color:var(--ink)">Credit Score</div>
+        <div style="font-size:13.5px;color:var(--muted);margin-top:4px">Free check · refreshed monthly · no impact.</div>
+        <div style="margin-top:20px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;text-align:center">
+          <svg width="180" height="110" viewBox="0 0 200 124" fill="none" style="max-width:100%"><path d="M20 104 A80 80 0 0 1 35.3 57" stroke="#E5483D" stroke-width="15" stroke-linecap="round"/><path d="M35.3 57 A80 80 0 0 1 75.3 27.9" stroke="#F08C3A" stroke-width="15" stroke-linecap="round"/><path d="M75.3 27.9 A80 80 0 0 1 124.7 27.9" stroke="#F4C430" stroke-width="15" stroke-linecap="round"/><path d="M124.7 27.9 A80 80 0 0 1 164.7 57" stroke="#8BC34A" stroke-width="15" stroke-linecap="round"/><path d="M164.7 57 A80 80 0 0 1 180 104" stroke="#3FA34D" stroke-width="15" stroke-linecap="round"/><line x1="100" y1="104" x2="158" y2="64" stroke="#0B2A4A" stroke-width="7" stroke-linecap="round"/><circle cx="100" cy="104" r="10" fill="#0B2A4A"/></svg>
+          <div style="font-family:'Manrope';font-weight:800;font-size:40px;color:#3FA34D;margin-top:6px">786</div>
+          <div style="font-size:13px;color:var(--muted);font-weight:600">Excellent · updated today</div>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- ============ FEED (from admin Articles) ============ -->
+      <sc-if value="{{ isFeed }}" hint-placeholder-val="{{ false }}">
+      <div style="animation:appfade .25s ease;padding:20px 18px 0">
+        <div style="font-family:'Manrope';font-weight:800;font-size:22px;color:var(--ink)">Feed</div>
+        <div style="font-size:13.5px;color:var(--muted);margin-top:4px">Money guides &amp; insights for you</div>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px">
+          <sc-for list="{{ feed }}" as="f" hint-placeholder-count="3">
+            <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;align-items:center;gap:14px">
+              <div style="width:96px;height:80px;flex:none;border-radius:12px;background:#EEF2F7 {{ f.coverBg }} center/cover no-repeat"></div>
+              <div style="flex:1"><span style="display:inline-block;color:var(--blue);font-weight:800;font-size:11px;letter-spacing:.4px">{{ f.category }}</span><div style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink);margin-top:6px;line-height:1.3">{{ f.title }}</div></div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      </sc-if>
+
+    </div>
+
+    <!-- CHAT -->
+    <sc-if value="{{ chatOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="position:fixed;bottom:150px;left:50%;transform:translateX(-50%);width:100%;max-width:408px;z-index:60;background:#fff;border-radius:18px;box-shadow:0 24px 60px rgba(11,42,74,.3);overflow:hidden;border:1px solid var(--line)">
+        <div style="background:#25D366;color:#fff;padding:14px 16px;display:flex;align-items:center;gap:10px">
+          <span style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M19.05 4.91A9.82 9.82 0 0012.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21h.004c5.46 0 9.91-4.45 9.91-9.91a9.85 9.85 0 00-2.9-7.01z"/></svg></span>
+          <div style="flex:1"><div style="font-family:'Manrope';font-weight:700;font-size:14px">Banking2Day Assistant</div><div style="font-size:11px;opacity:.85">Online · instant answers</div></div>
+          <button onClick="{{ toggleChat }}" style="background:none;border:none;color:#fff;cursor:pointer;font-size:18px;line-height:1">✕</button>
+        </div>
+        <div ref="{{ chatScrollRef }}" style="padding:14px;display:flex;flex-direction:column;gap:9px;background:var(--bg);height:240px;overflow-y:auto">
+          <sc-for list="{{ messages }}" as="m" hint-placeholder-count="1">
+            <div style="align-self:{{ m.align }};background:{{ m.bg }};color:{{ m.color }};border:{{ m.border }};border-radius:13px;padding:9px 12px;font-size:13px;line-height:1.5;max-width:86%;white-space:pre-line">{{ m.text }}</div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ leadFormVisible }}" hint-placeholder-val="{{ false }}">
+          <form onSubmit="{{ submitLead }}" style="padding:12px 14px;background:#EFF6F4;border-top:1px solid #CFE7DD;display:flex;flex-direction:column;gap:8px">
+            <div style="font-size:12px;font-weight:700;color:var(--teal-d)">Want our team to call you with full details?</div>
+            <input value="{{ leadName }}" oninput="{{ onLeadName }}" placeholder="Your name" style="border:1.5px solid var(--line);border-radius:9px;padding:9px 12px;font-size:13px;font-family:'DM Sans';outline:none"/>
+            <input value="{{ leadPhone }}" oninput="{{ onLeadPhone }}" inputmode="numeric" placeholder="Mobile number" style="border:1.5px solid var(--line);border-radius:9px;padding:9px 12px;font-size:13px;font-family:'DM Sans';outline:none"/>
+            <button type="submit" style="border:none;background:var(--teal);color:#fff;font-family:'Manrope';font-weight:700;font-size:13px;padding:10px;border-radius:9px;cursor:pointer">Request a callback</button>
+          </form>
+        </sc-if>
+        <div style="padding:10px 12px;background:#fff;border-top:1px solid var(--line)">
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
+            <sc-for list="{{ quickReplies }}" as="q" hint-placeholder-count="3">
+              <button onClick="{{ q.action }}" style="background:#EAF1FC;border:1px solid #CFE0F5;color:var(--blue);font-weight:700;font-size:11.5px;padding:6px 10px;border-radius:999px;cursor:pointer;font-family:'DM Sans'">{{ q.label }}</button>
+            </sc-for>
+          </div>
+          <form onSubmit="{{ sendMsg }}" style="display:flex;gap:8px;align-items:center">
+            <input value="{{ chatInput }}" oninput="{{ onChatInput }}" placeholder="Type your question…" style="flex:1;border:1.5px solid var(--line);border-radius:999px;padding:9px 13px;font-size:13px;font-family:'DM Sans';outline:none"/>
+            <button type="submit" aria-label="Send" style="width:38px;height:38px;flex:none;border-radius:50%;border:none;background:var(--blue);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M4 12l16-8-6 16-3-6-7-2z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg></button>
+          </form>
+        </div>
+      </div>
+    </sc-if>
+    <button onClick="{{ toggleChat }}" style="position:fixed;bottom:84px;right:16px;z-index:55;width:54px;height:54px;border-radius:50%;background:#25D366;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(37,211,102,.5)">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M19.05 4.91A9.82 9.82 0 0012.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21h.004c5.46 0 9.91-4.45 9.91-9.91a9.85 9.85 0 00-2.9-7.01zm-7.01 15.24h-.003a8.2 8.2 0 01-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.18 8.18 0 01-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 012.41 5.82c0 4.54-3.69 8.23-8.24 8.23z"/></svg>
+    </button>
+
+    <!-- BOTTOM TAB BAR -->
+    <div style="position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:440px;z-index:40;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);padding:8px 6px">
+      <button onClick="{{ tabHome }}" style="background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px 0;color:{{ cHome }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 11l8-6 8 6v8a1 1 0 01-1 1h-4v-6h-6v6H5a1 1 0 01-1-1z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span style="font-size:11px;font-weight:700">Home</span></button>
+      <button onClick="{{ tabLoans }}" style="background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px 0;color:{{ cLoans }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="2.5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2.4" stroke="currentColor" stroke-width="2"/></svg><span style="font-size:11px;font-weight:700">Loans</span></button>
+      <button onClick="{{ tabCards }}" style="background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px 0;color:{{ cCards }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 10h18" stroke="currentColor" stroke-width="2"/></svg><span style="font-size:11px;font-weight:700">Cards</span></button>
+      <button onClick="{{ tabScore }}" style="background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px 0;color:{{ cScore }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 14a8 8 0 0116 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 14l4-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span style="font-size:11px;font-weight:700">Score</span></button>
+      <button onClick="{{ tabFeed }}" style="background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px 0;color:{{ cFeed }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span style="font-size:11px;font-weight:700">Feed</span></button>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:440,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { tab: "home", category: null, products: null, articles: null,
+    chatOpen: false, chatInput: "", leadName: "", leadPhone: "", firstQuestion: "", leadOffered: false, leadSent: false,
+    messages: [{ from: "bot", text: "Hi! I'm the Banking2Day assistant. Ask me about loans, EMI, credit score, cards or safety — or tap a topic below." }] };
+
+  botReply(text){
+    const q = text.toLowerCase(), has = (...w) => w.some(x => q.includes(x));
+    if (has("emi","instal","calculat")) return "Estimate your EMI with our free calculators — move the sliders for amount, rate and tenure to see your monthly payment.";
+    if (has("personal loan")) return "Personal loans start from around 10.5% p.a., tenures 12–60 months. Checking eligibility never affects your credit score.";
+    if (has("home loan")) return "Home loans from about 8.35% p.a., tenures up to 30 years. Try the Home Loan EMI calculator to plan your budget.";
+    if (has("business loan")) return "Business loans help fund growing firms, typically from 15% p.a.";
+    if (has("eligib","qualify")) return "Eligibility is based mainly on your income and existing EMIs (FOIR ~50%). Our eligibility tool estimates how much you could borrow — no credit-score impact.";
+    if (has("credit score","cibil","score")) return "Check your credit score free, refreshed monthly, with zero impact. A higher score unlocks better rates.";
+    if (has("card","cashback","rewards")) return "We compare cashback, travel and rewards cards — including lifetime-free options, with fees and benefits shown clearly.";
+    if (has("prepay","foreclos")) return "Prepaying reduces your principal so you save interest or shorten tenure. Our Prepayment calculator shows your savings.";
+    if (has("otp","fraud","safe","scam","pin","cvv")) return "Never share an OTP, PIN, CVV or password — Banking2Day will never ask for them.";
+    if (has("fee","charge","cost","free")) return "Researching is completely free. We may earn a referral fee from some providers — always disclosed, never changing the facts.";
+    if (has("human","agent","call","contact","talk")) return "Our team can call you — share your name and number below and we'll reach out.";
+    if (has("hi","hello","hey","thanks","thank")) return "Happy to help! Ask me about loans, EMI, credit score, cards or safety.";
+    return "I can help with loans, EMI, eligibility, credit score, cards, prepayment and safety. Which would you like?";
+  }
+
+  pushChat(from, text){
+    this.setState((s) => ({ messages: [...s.messages, { from, text }] }));
+    setTimeout(() => { try { if (this._chatScroll) this._chatScroll.scrollTop = this._chatScroll.scrollHeight; } catch(_){} }, 30);
+  }
+
+  ask(text){
+    if (!text || !text.trim()) return;
+    if (!this.state.firstQuestion) this.setState({ firstQuestion: text.trim() });
+    this.pushChat("user", text.trim());
+    const reply = this.botReply(text);
+    setTimeout(() => {
+      this.pushChat("bot", reply);
+      if (!this.state.leadOffered && !this.state.leadSent) {
+        setTimeout(() => { this.pushChat("bot", "Would you like our team to call you with full details? Share your name and number below 👇"); this.setState({ leadOffered: true }); }, 500);
+      }
+    }, 380);
+  }
+
+  saveChatLead(name, phone){
+    const rec = { name: name.trim(), phone: phone, product: this.state.firstQuestion ? ("Chat: " + this.state.firstQuestion).slice(0,120) : "Chat enquiry", city: "Mobile app", status: "New", consent: true, created_at: new Date().toISOString() };
+    if (window.B2D && window.B2D.configured && window.B2D.submitLead) { window.B2D.submitLead(rec).catch(() => {}); }
+    else { try { const k="b2d_leads"; const l=JSON.parse(localStorage.getItem(k)||"[]"); l.unshift(rec); localStorage.setItem(k,JSON.stringify(l)); } catch(_){} }
+  }
+
+  componentDidMount(){
+    // Pull live content from the admin/backend when configured.
+    if (window.B2D) {
+      if (B2D.getProducts) B2D.getProducts().then(p => this.setState({ products: p })).catch(() => {});
+      if (B2D.getArticles) B2D.getArticles({ status: "Published" }).then(a => this.setState({ articles: a })).catch(() => {});
+    }
+  }
+
+  demoProducts(){
+    return [
+      { category:"personal_loan", initials:"LP1", provider:"Loan Provider 01", highlight:"Instant · paperless", rate_label:"10.49% p.a." },
+      { category:"personal_loan", initials:"LP2", provider:"Loan Provider 02", highlight:"Flexible repayment", rate_label:"10.80% p.a." },
+      { category:"personal_loan", initials:"LP3", provider:"Loan Provider 03", highlight:"Minimal documentation", rate_label:"10.99% p.a." },
+      { category:"business_loan", initials:"BL1", provider:"Business Lender 01", highlight:"For growing firms", rate_label:"15% p.a." },
+      { category:"business_loan", initials:"BL2", provider:"Business Lender 02", highlight:"Collateral-free", rate_label:"16.5% p.a." },
+      { category:"home_loan", initials:"HF1", provider:"Home Finance 01", highlight:"Wide branch network", rate_label:"8.35% p.a." },
+      { category:"home_loan", initials:"HF2", provider:"Home Finance 02", highlight:"Low processing fee", rate_label:"8.55% p.a." },
+      { category:"credit_card", initials:"CC1", provider:"Rewards Card", highlight:"5X on online spends · LTF", rate_label:"Lifetime free" },
+      { category:"credit_card", initials:"CC2", provider:"Cashback Card", highlight:"5% on utilities", rate_label:"₹0 joining" },
+    ];
+  }
+
+  catMeta(key){
+    return ({
+      personal_loan: { title:"Personal Loan", sub:"Compare instant, paperless options" },
+      business_loan: { title:"Business Loan", sub:"Funding options for your business" },
+      home_loan: { title:"Home Loan", sub:"Explore home finance options" },
+      credit_card: { title:"Credit Cards", sub:"Pre-approved cards for your profile" },
+    })[key] || { title:"Options", sub:"" };
+  }
+
+  renderVals(){
+    const tab = this.state.tab, on = "#2F7AE0", off = "#9AA7BA";
+    const cat = this.state.category;
+    const allProducts = this.state.products && this.state.products.length ? this.state.products : this.demoProducts();
+    const meta = this.catMeta(cat);
+    const catItems = cat ? allProducts.filter(p => p.category === cat) : [];
+
+    const articles = this.state.articles && this.state.articles.length ? this.state.articles : [
+      { category:"PERSONAL LOAN", title:"Short tenure or long: what should you choose?", image_url:"uploads/home-loan-guide.png" },
+      { category:"MARKETS", title:"Bank credit grows faster than deposits — what it means", image_url:"uploads/property-tax-guide.jpg" },
+      { category:"SAFETY", title:"The 10-minute digital banking fraud safety check", image_url:"uploads/fraud-guide.jpg" },
+    ];
+
+    const openCat = (key) => (e) => { if (e) e.preventDefault(); this.setState({ tab:"category", category:key }); try{ window.scrollTo(0,0); }catch(_){} };
+    const goTab = (t) => () => { this.setState({ tab:t, category:null }); try{ window.scrollTo(0,0); }catch(_){} };
+
+    return {
+      isHome: tab==="home", isCategory: tab==="category", isScore: tab==="score", isFeed: tab==="feed",
+      showBack: tab==="category", showLogo: tab!=="category",
+      catTitle: meta.title, catSub: meta.sub, catItems,
+      sourceNote: (this.state.products && this.state.products.length) ? "Showing live admin data." : "Showing demo data until the backend URL is set.",
+      cHome: (tab==="home")?on:off, cLoans: (tab==="category"&&cat&&cat.indexOf("loan")>-1)?on:off,
+      cCards: (tab==="category"&&cat==="credit_card")?on:off, cScore: (tab==="score")?on:off, cFeed: (tab==="feed")?on:off,
+      offers: [
+        { bg:"linear-gradient(135deg,#2F7AE0,#1F5FBF)", badge:"INSTANT · PAPERLESS", headline:"₹5,00,000", sub:"Personal loan · from 1.5%/mo", cta:"Apply now", action: openCat("personal_loan") },
+        { bg:"linear-gradient(135deg,#3A2C6E,#5B3FA6)", badge:"CARD · PRE-APPROVED", headline:"5X rewards", sub:"Intent Rewards Card · LTF", cta:"Activate now", action: openCat("credit_card") },
+        { bg:"linear-gradient(135deg,#0E7C66,#13A07C)", badge:"FREE · MONTHLY", headline:"Credit score", sub:"Check free · no impact", cta:"Check now", action: goTab("score") },
+      ],
+      tiles: [
+        { icon:"PL", label:"Personal Loan", action: openCat("personal_loan") },
+        { icon:"BL", label:"Business Loan", action: openCat("business_loan") },
+        { icon:"HL", label:"Home Loan", action: openCat("home_loan") },
+        { icon:"CC", label:"Credit Cards", action: openCat("credit_card") },
+        { icon:"CS", label:"Score", action: goTab("score") },
+        { icon:"EMI", label:"EMI", action: openCat("personal_loan") },
+      ],
+      feed: articles.map(a => ({ category: a.category, title: a.title, coverBg: "url('" + (a.image_url || "uploads/home-loan-guide.png") + "')" })),
+      tabHome: goTab("home"), tabLoans: openCat("personal_loan"), tabCards: openCat("credit_card"),
+      tabScore: goTab("score"), tabFeed: goTab("feed"),
+      chatOpen: this.state.chatOpen,
+      chatInput: this.state.chatInput,
+      chatScrollRef: (el) => { this._chatScroll = el; },
+      toggleChat: () => this.setState((s) => ({ chatOpen: !s.chatOpen })),
+      messages: this.state.messages.map((m) => ({
+        text: m.text,
+        align: m.from === "user" ? "flex-end" : "flex-start",
+        bg: m.from === "user" ? "#2F7AE0" : "#fff",
+        color: m.from === "user" ? "#fff" : "#14213A",
+        border: m.from === "user" ? "none" : "1px solid #EAEEF3",
+      })),
+      quickReplies: [
+        { label: "Personal loan", action: () => this.ask("Personal loan") },
+        { label: "Credit score", action: () => this.ask("Credit score") },
+        { label: "Calculate EMI", action: () => this.ask("How do I calculate EMI?") },
+        { label: "Is it free?", action: () => this.ask("Is it free?") },
+      ],
+      onChatInput: (e) => this.setState({ chatInput: e.target.value }),
+      sendMsg: (e) => { e.preventDefault(); const t = this.state.chatInput; this.setState({ chatInput: "" }); this.ask(t); },
+      leadFormVisible: this.state.leadOffered && !this.state.leadSent,
+      leadName: this.state.leadName,
+      leadPhone: this.state.leadPhone,
+      onLeadName: (e) => this.setState({ leadName: e.target.value }),
+      onLeadPhone: (e) => this.setState({ leadPhone: e.target.value.replace(/[^\d]/g, "").slice(0, 10) }),
+      submitLead: (e) => {
+        e.preventDefault();
+        if (!this.state.leadName.trim() || this.state.leadPhone.length !== 10) { this.pushChat("bot", "Please enter your name and a valid 10-digit mobile number."); return; }
+        this.saveChatLead(this.state.leadName, this.state.leadPhone);
+        const nm = this.state.leadName.trim();
+        this.setState({ leadSent: true });
+        this.pushChat("bot", "Thanks " + nm + "! Our team will call you shortly on " + this.state.leadPhone + ".");
+      },
+      back: () => this.setState({ tab:"home", category:null }),
+      goPersonal: openCat("personal_loan"),
+      noop: (e) => { if (e) e.preventDefault(); },
+    };
+  }
+}
+</script>
+</body>
+</html>

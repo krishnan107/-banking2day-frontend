@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#fff}
+@media(max-width:900px){[data-r=navlinks]{display:none!important}[data-r=h1]{font-size:32px!important}[data-r=legalgrid]{grid-template-columns:1fr!important}[data-r=toc]{position:static!important;margin-bottom:24px}}
+</style>
+</helmet>
+<div style="--navy:#0B3B60;--navy-d:#082B47;--teal:#0E7C66;--teal-d:#0A6450;--ink:#17223B;--muted:#526171;--line:#DCE5EC;--surface:#F4F7FA;--mint:#E7F5F3;font-family:'DM Sans',sans-serif;color:#17223B;background:#fff;overflow-x:hidden">
+
+  <!-- HEADER -->
+  <header style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)">
+    <div style="max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:32px">
+      <a href="Banking2Day.dc.html" style="display:flex;align-items:center"><img src="uploads/banking2day-logo.png" alt="Banking2Day" style="height:36px;width:auto"/></a>
+      <nav data-r="navlinks" style="display:flex;gap:24px;margin-left:8px;font-weight:600;font-size:15px;color:#2B3A4B">
+        <a href="Banking2Day.dc.html#loans" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Loans</a>
+        <a href="Banking2Day.dc.html#cards" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Credit Cards</a>
+        <a href="Banking2Day.dc.html#how" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Calculators</a>
+        <a href="Banking2Day About.dc.html" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">About</a>
+      </nav>
+      <a href="Banking2Day Loan Apply.dc.html" style="margin-left:auto;text-decoration:none;background:var(--teal);color:#fff;font-weight:700;font-size:15px;padding:11px 20px;border-radius:8px;box-shadow:0 8px 18px rgba(14,124,102,.22)" style-hover="background:var(--teal-d)">Check eligibility</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="background:linear-gradient(160deg,#0B3B60,#0E5A52);color:#fff">
+    <div style="max-width:1180px;margin:0 auto;padding:52px 24px 44px">
+      <div style="font-size:13px;color:#9FD8C7;font-weight:700;letter-spacing:1.5px">LEGAL</div>
+      <h1 data-r="h1" style="font-family:'Manrope';font-weight:800;font-size:42px;letter-spacing:-.8px;margin:12px 0 0">Privacy Policy</h1>
+      <p style="font-size:15px;color:#9FD8C7;margin:12px 0 0;font-weight:600">Last updated: 22 June 2026</p>
+    </div>
+  </section>
+
+  <!-- BODY -->
+  <section style="max-width:1180px;margin:0 auto;padding:48px 24px 64px">
+    <div data-r="legalgrid" style="display:grid;grid-template-columns:240px 1fr;gap:44px;align-items:start">
+      <!-- TOC -->
+      <nav data-r="toc" style="position:sticky;top:88px;display:flex;flex-direction:column;gap:4px;border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--surface)">
+        <div style="font-family:'Manrope';font-weight:800;font-size:13px;color:var(--navy);padding:4px 8px 8px">On this page</div>
+        <a href="#intro" style="font-size:13.5px;color:var(--muted);text-decoration:none;padding:7px 8px;border-radius:7px" style-hover="background:#fff;color:var(--teal-d)">1. Introduction</a>
+        <a href="#collect" style="font-size:13.5px;color:var(--muted);text-decoration:none;padding:7px 8px;border-radius:7px" style-hover="background:#fff;color:var(--teal-d)">2. What we collect</a>
+        <a href="#use" style="font-size:13.5px;color:var(--muted);text-decoration:none;padding:7px 8px;border-radius:7px" style-hover="background:#fff;color:var(--teal-d)">3. How we use it</a>
+        <a href="#share" style="font-size:13.5px;color:var(--muted);text-decoration:none;padding:7px 8px;border-radius:7px" style-hover="background:#fff;color:var(--teal-d)">4. Sharing</a>
+        <a href="#cookies" style="font-size:13.5px;color:var(--muted);text-decoration:none;padding:7px 8px;border-radius:7px" style-hover="background:#fff;color:var(--teal-d)">5. Cookies</a>
+        <a href="#security" style="font-size:13.5px;color:var(--muted);text-decoration:none;padding:7px 8px;border-radius:7px" style-hover="background:#fff;color:var(--teal-d)">6. Data security</a>
+        <a href="#rights" style="font-size:13.5px;color:var(--muted);text-decoration:none;padding:7px 8px;border-radius:7px" style-hover="background:#fff;color:var(--teal-d)">7. Your rights</a>
+        <a href="#contact" style="font-size:13.5px;color:var(--muted);text-decoration:none;padding:7px 8px;border-radius:7px" style-hover="background:#fff;color:var(--teal-d)">8. Contact</a>
+      </nav>
+
+      <!-- CONTENT -->
+      <div style="max-width:760px">
+        <div style="background:#FFF6E0;border:1px solid #F0DCA8;border-radius:12px;padding:16px 18px;font-size:13.5px;color:#8A6212;line-height:1.6;margin-bottom:28px">This is a sample policy provided as a starting template for the Banking2Day prototype. Have it reviewed by a qualified legal professional before publishing.</div>
+
+        <h2 id="intro" style="font-family:'Manrope';font-weight:800;font-size:22px;color:var(--navy);scroll-margin-top:88px">1. Introduction</h2>
+        <p style="font-size:15.5px;color:var(--muted);line-height:1.75;margin-top:10px">Banking2Day ("we", "us", "our") is an independent information and comparison platform. This Privacy Policy explains what information we collect when you use our website, how we use it, and the choices you have. By using Banking2Day, you agree to the practices described here.</p>
+
+        <h2 id="collect" style="font-family:'Manrope';font-weight:800;font-size:22px;color:var(--navy);margin-top:34px;scroll-margin-top:88px">2. Information we collect</h2>
+        <p style="font-size:15.5px;color:var(--muted);line-height:1.75;margin-top:10px">We aim to collect as little as possible. Depending on how you use the site, this may include:</p>
+        <ul style="margin:12px 0 0 20px;color:var(--muted);font-size:15.5px;line-height:1.8">
+          <li><b style="color:var(--ink)">Details you provide</b> — such as your name, email or phone number when you submit an enquiry, subscribe to our newsletter, or contact us.</li>
+          <li><b style="color:var(--ink)">Usage information</b> — pages visited, calculator inputs you choose to run, and general device/browser information.</li>
+          <li><b style="color:var(--ink)">Cookies</b> — small files that help the site function and help us understand usage (see section 5).</li>
+        </ul>
+        <p style="font-size:15.5px;color:var(--muted);line-height:1.75;margin-top:12px">You can browse, compare and use our calculators without creating an account or sharing personal details.</p>
+
+        <h2 id="use" style="font-family:'Manrope';font-weight:800;font-size:22px;color:var(--navy);margin-top:34px;scroll-margin-top:88px">3. How we use your information</h2>
+        <ul style="margin:12px 0 0 20px;color:var(--muted);font-size:15.5px;line-height:1.8">
+          <li>To respond to enquiries and provide the comparison or information you requested.</li>
+          <li>To send the newsletter or updates you have opted in to (you can unsubscribe anytime).</li>
+          <li>To operate, maintain and improve the website and our tools.</li>
+          <li>To detect, prevent and address fraud, abuse or security issues.</li>
+          <li>To comply with applicable legal and regulatory obligations.</li>
+        </ul>
+
+        <h2 id="share" style="font-family:'Manrope';font-weight:800;font-size:22px;color:var(--navy);margin-top:34px;scroll-margin-top:88px">4. How we share information</h2>
+        <p style="font-size:15.5px;color:var(--muted);line-height:1.75;margin-top:10px">We do not sell your personal information. We may share it only: with regulated providers when you choose to proceed with an enquiry; with trusted service providers who help us run the site (under confidentiality obligations); or where required by law. Any referral relationship that may apply is disclosed near the relevant comparison.</p>
+
+        <h2 id="cookies" style="font-family:'Manrope';font-weight:800;font-size:22px;color:var(--navy);margin-top:34px;scroll-margin-top:88px">5. Cookies</h2>
+        <p style="font-size:15.5px;color:var(--muted);line-height:1.75;margin-top:10px">We use cookies and similar technologies to keep the site working, remember your preferences and understand how the site is used. You can control cookies through your browser settings; disabling some may affect how parts of the site function.</p>
+
+        <h2 id="security" style="font-family:'Manrope';font-weight:800;font-size:22px;color:var(--navy);margin-top:34px;scroll-margin-top:88px">6. Data security &amp; retention</h2>
+        <p style="font-size:15.5px;color:var(--muted);line-height:1.75;margin-top:10px">We use reasonable technical and organisational measures to protect your information. No method of transmission or storage is completely secure, so we cannot guarantee absolute security. We keep personal information only as long as needed for the purposes described here or as required by law.</p>
+
+        <h2 id="rights" style="font-family:'Manrope';font-weight:800;font-size:22px;color:var(--navy);margin-top:34px;scroll-margin-top:88px">7. Your rights</h2>
+        <p style="font-size:15.5px;color:var(--muted);line-height:1.75;margin-top:10px">Subject to applicable law, you may request access to, correction of, or deletion of your personal information, and you may withdraw consent or unsubscribe at any time. To make a request, contact us using the details below.</p>
+
+        <h2 id="contact" style="font-family:'Manrope';font-weight:800;font-size:22px;color:var(--navy);margin-top:34px;scroll-margin-top:88px">8. Contact us</h2>
+        <p style="font-size:15.5px;color:var(--muted);line-height:1.75;margin-top:10px">Questions about this policy or your data? Email <a href="mailto:privacy@banking2day.com" style="color:var(--teal-d);font-weight:700;text-decoration:none">privacy@banking2day.com</a> or write to Banking2Day, Bandra Kurla Complex, Mumbai 400051. We may update this policy from time to time; the "last updated" date above reflects the latest version.</p>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Banking2Day Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:900}}"></script>
+</body>
+</html>

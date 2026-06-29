@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#fff}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:7px;border-radius:999px;background:transparent;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:7px;border-radius:999px;background:linear-gradient(90deg,#0E7C66 0 var(--pct,50%),#E3ECF2 var(--pct,50%) 100%)}
+input[type=range]::-moz-range-track{height:7px;border-radius:999px;background:#E3ECF2}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;margin-top:-7px;width:21px;height:21px;border-radius:50%;background:#0E7C66;border:4px solid #fff;box-shadow:0 0 0 1px #CFE0DA,0 4px 10px rgba(14,124,102,.45)}
+input[type=range]::-moz-range-thumb{width:21px;height:21px;border:4px solid #fff;border-radius:50%;background:#0E7C66;box-shadow:0 0 0 1px #CFE0DA,0 4px 10px rgba(14,124,102,.45)}
+@media(max-width:900px){[data-r=calc]{grid-template-columns:1fr!important}[data-r=rt]{grid-template-columns:1fr!important}[data-r=g3e]{grid-template-columns:1fr!important}[data-r=navlinks]{display:none!important}[data-r=h1]{font-size:30px!important}[data-r=notch]{display:none!important}}
+</style>
+</helmet>
+<div style="--navy:#0B3B60;--navy-d:#082B47;--teal:#0E7C66;--teal-d:#0A6450;--amber:#F4B942;--amber-l:#FFF6E0;--ink:#17223B;--muted:#526171;--line:#DCE5EC;--surface:#F4F7FA;--mint:#E7F5F3;--mint-2:#F2FAF7;--tint:#EEF4FA;font-family:'DM Sans',sans-serif;color:#17223B;background:#fff;overflow-x:hidden">
+
+  <!-- HEADER -->
+  <header style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)">
+    <div style="max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:32px">
+      <a href="Banking2Day.dc.html" style="display:flex;align-items:center"><img src="uploads/banking2day-logo.png" alt="Banking2Day" style="height:36px;width:auto"/></a>
+      <nav data-r="navlinks" style="display:flex;gap:24px;margin-left:8px;font-weight:600;font-size:15px;color:#2B3A4B">
+        <a href="Banking2Day.dc.html#loans" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Loans</a>
+        <a href="Banking2Day.dc.html#cards" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Credit Cards</a>
+        <a href="Banking2Day.dc.html#how" style="text-decoration:none;color:var(--teal)">Calculators</a>
+        <a href="Banking2Day.dc.html#learn" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Learn</a>
+      </nav>
+      <a href="Banking2Day Loan Apply.dc.html" style="margin-left:auto;text-decoration:none;background:var(--teal);color:#fff;font-weight:700;font-size:15px;padding:11px 20px;border-radius:8px;box-shadow:0 8px 18px rgba(14,124,102,.22)" style-hover="background:var(--teal-d)">Check eligibility</a>
+    </div>
+  </header>
+
+  <!-- HERO + CALCULATOR -->
+  <section style="background:linear-gradient(180deg,#EEF4F9 0%,#ffffff 90%)">
+    <div style="max-width:1180px;margin:0 auto;padding:34px 24px 56px">
+      <div style="font-size:13px;color:var(--muted);font-weight:600;display:flex;gap:8px;align-items:center"><a href="Banking2Day.dc.html" style="color:var(--muted);text-decoration:none" style-hover="color:var(--teal)">Home</a><span>/</span><a href="Banking2Day.dc.html#how" style="color:var(--muted);text-decoration:none" style-hover="color:var(--teal)">Calculators</a><span>/</span><span style="color:var(--ink)">NPS</span></div>
+      <h1 data-r="h1" style="font-family:'Manrope';font-weight:800;font-size:38px;letter-spacing:-.7px;color:var(--navy);margin:16px 0 0">NPS Calculator</h1>
+      <p style="font-size:17px;color:var(--muted);margin:10px 0 0;max-width:660px;line-height:1.6">Plan your retirement with the National Pension System. Enter your monthly contribution, age and expected return to estimate your corpus at 60 and your monthly pension.</p>
+
+      <!-- CALCULATOR -->
+      <div data-r="calc" style="position:relative;display:grid;grid-template-columns:1.32fr .88fr;gap:26px;margin-top:28px;align-items:start">
+
+        <!-- LEFT: INPUTS -->
+        <div style="background:linear-gradient(150deg,#EDF3FA 0%,#F4F8FC 100%);border:1px solid #DDE8F2;border-radius:24px;padding:28px;box-shadow:0 18px 44px rgba(11,59,96,.07)">
+          <div style="font-family:'Manrope';font-weight:800;font-size:21px;color:var(--navy)">Plan your NPS pension</div>
+
+          <!-- contribution -->
+          <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:20px">
+            <div style="font-weight:600;font-size:14px;color:var(--muted)">Monthly contribution</div>
+            <div style="display:flex;align-items:center;gap:4px;border-bottom:2px solid var(--line);padding:8px 0 10px;margin-top:14px"><span style="font-family:'Manrope';font-weight:800;font-size:26px;color:var(--ink)">₹</span><input inputmode="numeric" value="{{ contribStr }}" oninput="{{ onContribText }}" style="border:none;background:none;outline:none;font-family:'Manrope';font-weight:800;font-size:26px;color:var(--ink);width:100%"/></div>
+            <input type="range" min="500" max="100000" step="500" value="{{ contrib }}" oninput="{{ onContrib }}" style="--pct:{{ contribPct }}%;margin-top:18px">
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-weight:600;margin-top:9px"><span>₹500</span><span>₹1L</span></div>
+          </div>
+
+          <!-- age + return -->
+          <div data-r="rt" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
+            <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px">
+              <div style="font-weight:600;font-size:14px;color:var(--muted)">Current age</div>
+              <div style="border-bottom:2px solid var(--line);padding:8px 0 10px;margin-top:14px"><span style="font-family:'Manrope';font-weight:800;font-size:26px;color:var(--ink)">{{ age }}</span><span style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--muted);margin-left:6px">Yrs</span></div>
+              <input type="range" min="18" max="59" step="1" value="{{ age }}" oninput="{{ onAge }}" style="--pct:{{ agePct }}%;margin-top:18px">
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-weight:600;margin-top:9px"><span>18</span><span>59</span></div>
+            </div>
+            <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px">
+              <div style="font-weight:600;font-size:14px;color:var(--muted)">Expected return <span style="font-size:12px">(% p.a.)</span></div>
+              <div style="border-bottom:2px solid var(--line);padding:8px 0 10px;margin-top:14px"><input inputmode="decimal" value="{{ returnStr }}" oninput="{{ onReturnText }}" style="border:none;background:none;outline:none;font-family:'Manrope';font-weight:800;font-size:26px;color:var(--ink);width:100%"/></div>
+              <input type="range" min="5" max="15" step="0.5" value="{{ ret }}" oninput="{{ onReturn }}" style="--pct:{{ retPct }}%;margin-top:18px">
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-weight:600;margin-top:9px"><span>5%</span><span>15%</span></div>
+            </div>
+          </div>
+
+          <!-- annuity -->
+          <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:16px">
+            <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-weight:600;font-size:14px;color:var(--muted)">Annuity portion (for pension)</span><span style="font-family:'Manrope';font-weight:800;font-size:18px;color:var(--teal-d)">{{ annuity }}%</span></div>
+            <input type="range" min="40" max="100" step="5" value="{{ annuity }}" oninput="{{ onAnnuity }}" style="--pct:{{ annuityPct }}%;margin-top:16px">
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-weight:600;margin-top:9px"><span>40% (min)</span><span>100%</span></div>
+            <div style="font-size:12.5px;color:var(--muted);margin-top:10px;line-height:1.5">At 60, this share buys an annuity for your monthly pension (assumed 6% p.a.); the rest is a tax-free lump sum.</div>
+          </div>
+        </div>
+
+        <!-- RIGHT: RESULT -->
+        <div style="position:relative;display:flex;flex-direction:column;background:linear-gradient(150deg,#EDF3FA 0%,#F4F8FC 100%);border:1px solid #DDE8F2;border-radius:24px;padding:16px;box-shadow:0 18px 44px rgba(11,59,96,.07)">
+          <div data-r="notch" style="position:absolute;left:-32px;top:64px;width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;box-shadow:-5px 0 14px rgba(11,59,96,.08)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#0E7C66" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div style="background:linear-gradient(160deg,#0B3B60,#0E5A52);border-radius:18px;padding:24px;text-align:center;box-shadow:0 14px 28px rgba(11,59,96,.2)">
+            <div style="font-family:'Manrope';font-weight:700;font-size:13px;letter-spacing:1px;color:#9FD8C7">CORPUS AT AGE 60</div>
+            <div style="font-family:'Manrope';font-weight:800;font-size:40px;color:#fff;line-height:1.1;margin-top:6px">{{ corpusStr }}</div>
+            <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border-radius:999px;padding:8px 14px;margin-top:14px"><span style="font-size:12.5px;color:#C3D5E2;font-weight:600">Monthly pension</span><span style="font-family:'Manrope';font-weight:800;font-size:15px;color:#fff">{{ pensionStr }}</span></div>
+          </div>
+          <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;margin-top:12px">
+            <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">Total invested</span><span style="font-family:'Manrope';font-weight:700;font-size:16px;color:var(--ink)">{{ investedStr }}</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px"><span style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">Est. returns</span><span style="font-family:'Manrope';font-weight:700;font-size:16px;color:#B47B12">{{ gainsStr }}</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px"><span style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">Lump sum at 60</span><span style="font-family:'Manrope';font-weight:700;font-size:16px;color:var(--ink)">{{ lumpStr }}</span></div>
+            <div style="border-top:1px dashed var(--line);margin:18px 0"></div>
+            <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:'Manrope';font-weight:800;font-size:18px;color:var(--navy)">Total corpus</span><span style="font-family:'Manrope';font-weight:800;font-size:19px;color:var(--navy)">{{ corpusStr }}</span></div>
+          </div>
+          <a href="Banking2Day.dc.html" style="display:block;text-align:center;text-decoration:none;background:var(--teal);color:#fff;font-family:'Manrope';font-weight:800;font-size:16px;padding:16px;border-radius:14px;margin-top:14px;box-shadow:0 14px 28px rgba(14,124,102,.28)" style-hover="background:var(--teal-d)">Explore Banking2Day →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section style="max-width:980px;margin:0 auto;padding:56px 24px 0">
+    <div style="color:var(--teal-d);font-weight:700;font-size:12px;letter-spacing:1.5px">UNDERSTAND NPS</div>
+    <h2 style="font-family:'Manrope';font-weight:800;font-size:30px;letter-spacing:-.5px;color:var(--navy);margin:8px 0 0">What is the National Pension System?</h2>
+    <p style="font-size:16px;color:var(--muted);line-height:1.7;margin:14px 0 0">The <strong style="color:var(--ink)">National Pension System (NPS)</strong> is a voluntary, long-term retirement savings scheme. You contribute regularly until age 60, your money is invested in a mix of equity and debt, and it grows through compounding. At 60 you can withdraw part of the corpus as a tax-free lump sum and must use the rest to buy an annuity that pays you a monthly pension.</p>
+
+    <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;margin-top:24px">
+      <div style="font-family:'Manrope';font-weight:800;font-size:16px;color:var(--navy)">How the estimate works</div>
+      <div style="font-size:14.5px;color:var(--muted);line-height:1.8;margin-top:10px">1. Monthly contributions grow at your expected return until age 60 (compounded monthly)<br>2. At 60, the annuity portion buys a pension (assumed 6% p.a.); the rest is a lump sum</div>
+    </div>
+
+    <h2 style="font-family:'Manrope';font-weight:800;font-size:24px;color:var(--navy);margin:44px 0 0">What affects your NPS corpus?</h2>
+    <div data-r="g3e" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px">
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px"><div style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">Starting early</div><p style="font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.55">More years until 60 means far more compounding — the biggest lever of all.</p></div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px"><div style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">Contribution</div><p style="font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.55">A higher monthly amount directly increases your retirement corpus.</p></div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px"><div style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">Asset mix &amp; return</div><p style="font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.55">A higher equity allocation can raise long-term returns, with more short-term risk.</p></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="max-width:820px;margin:0 auto;padding:56px 24px 0">
+    <h2 style="font-family:'Manrope';font-weight:800;font-size:28px;color:var(--navy);text-align:center">Frequently asked questions</h2>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-top:28px">
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden">
+        <button onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:none;cursor:pointer;padding:18px 20px;text-align:left;font-family:'DM Sans';font-weight:700;font-size:15.5px;color:var(--ink)">How much of my NPS corpus can I withdraw at 60?<span data-chev style="color:var(--teal);transition:transform .2s">▾</span></button>
+        <div data-open="0" style="max-height:0;overflow:hidden;transition:max-height .25s ease"><p style="padding:0 20px 18px;color:var(--muted);font-size:14.5px;line-height:1.6">At maturity you can withdraw up to 60% of the corpus as a tax-free lump sum. The remaining minimum 40% must be used to purchase an annuity that provides your monthly pension.</p></div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden">
+        <button onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:none;cursor:pointer;padding:18px 20px;text-align:left;font-family:'DM Sans';font-weight:700;font-size:15.5px;color:var(--ink)">Is the pension amount guaranteed?<span data-chev style="color:var(--teal);transition:transform .2s">▾</span></button>
+        <div data-open="0" style="max-height:0;overflow:hidden;transition:max-height .25s ease"><p style="padding:0 20px 18px;color:var(--muted);font-size:14.5px;line-height:1.6">No. NPS returns are market-linked, so the corpus is an estimate. The pension also depends on annuity rates at the time of purchase, which vary. These figures are indicative.</p></div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden">
+        <button onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:none;cursor:pointer;padding:18px 20px;text-align:left;font-family:'DM Sans';font-weight:700;font-size:15.5px;color:var(--ink)">What tax benefits does NPS offer?<span data-chev style="color:var(--teal);transition:transform .2s">▾</span></button>
+        <div data-open="0" style="max-height:0;overflow:hidden;transition:max-height .25s ease"><p style="padding:0 20px 18px;color:var(--muted);font-size:14.5px;line-height:1.6">NPS contributions qualify for deductions under Section 80C, with an additional deduction available under Section 80CCD(1B). Consult a tax adviser for limits applicable to your situation.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="max-width:1100px;margin:0 auto;padding:56px 24px">
+    <div style="background:linear-gradient(135deg,var(--navy),var(--teal));border-radius:24px;padding:48px;text-align:center;color:#fff">
+      <h2 style="font-family:'Manrope';font-weight:800;font-size:30px;letter-spacing:-.5px">Plan the rest of your money too</h2>
+      <p style="font-size:16px;opacity:.9;margin:10px 0 0">Compare loans, cards and deposits, or run another calculator on Banking2Day.</p>
+      <a href="Banking2Day.dc.html#how" style="display:inline-block;text-decoration:none;background:#fff;color:var(--navy);font-weight:700;font-size:16px;padding:14px 30px;border-radius:12px;margin-top:24px" style-hover="filter:brightness(.96)">Explore calculators</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--navy-d);color:#9FB3C4">
+    <div style="max-width:1100px;margin:0 auto;padding:30px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:12.5px">
+      <span>Banking2Day is an information and comparison platform, not a bank, NBFC or financial adviser. Projections are indicative and not guaranteed.</span>
+      <a href="Banking2Day.dc.html" style="color:#fff;text-decoration:none;font-weight:600" style-hover="opacity:.8">← Back to Banking2Day</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:760}}">
+class Component extends DCLogic {
+  state = { contrib: 5000, age: 30, ret: 10, annuity: 40 };
+
+  fmtINR(n){
+    n = Math.round(Number(n) || 0);
+    const neg = n < 0; n = Math.abs(n);
+    let s = String(n), last3 = s.slice(-3), rest = s.slice(0, -3);
+    if (rest) { last3 = ',' + last3; rest = rest.replace(/\B(?=(\d{2})+(?!\d))/g, ','); }
+    return (neg ? '-' : '') + '₹' + rest + last3;
+  }
+
+  renderVals(){
+    const n = (60 - this.state.age) * 12;
+    const i = this.state.ret / 12 / 100;
+    const C = this.state.contrib;
+    const corpus = n <= 0 ? 0 : (i === 0 ? C * n : C * ((Math.pow(1 + i, n) - 1) / i) * (1 + i));
+    const invested = C * n;
+    const gains = corpus - invested;
+    const annuityCorpus = corpus * this.state.annuity / 100;
+    const lump = corpus - annuityCorpus;
+    const pension = annuityCorpus * 0.06 / 12;
+
+    return {
+      contrib: C, contribStr: C.toLocaleString('en-IN'),
+      contribPct: (((C - 500) / (100000 - 500)) * 100).toFixed(1),
+      age: this.state.age, agePct: (((this.state.age - 18) / (59 - 18)) * 100).toFixed(1),
+      ret: this.state.ret, returnStr: (Math.round(this.state.ret * 10) / 10).toString(),
+      retPct: (((this.state.ret - 5) / 10) * 100).toFixed(1),
+      annuity: this.state.annuity, annuityPct: (((this.state.annuity - 40) / 60) * 100).toFixed(1),
+      corpusStr: this.fmtINR(corpus),
+      investedStr: this.fmtINR(invested),
+      gainsStr: this.fmtINR(gains),
+      lumpStr: this.fmtINR(lump),
+      pensionStr: this.fmtINR(pension) + "/mo",
+      onContrib: (e) => this.setState({ contrib: Number(e.target.value) }),
+      onContribText: (e) => { let v = Number(String(e.target.value).replace(/[^\d]/g, "")) || 0; this.setState({ contrib: Math.max(500, Math.min(100000, v)) }); },
+      onAge: (e) => this.setState({ age: Number(e.target.value) }),
+      onReturn: (e) => this.setState({ ret: Number(e.target.value) }),
+      onReturnText: (e) => { let v = parseFloat(String(e.target.value).replace(/[^\d.]/g, "")) || 0; this.setState({ ret: Math.max(5, Math.min(15, v)) }); },
+      onAnnuity: (e) => this.setState({ annuity: Number(e.target.value) }),
+      toggleFaq: (e) => {
+        const btn = e.currentTarget, ans = btn.nextElementSibling;
+        const open = ans.getAttribute('data-open') === '1';
+        ans.setAttribute('data-open', open ? '0' : '1');
+        ans.style.maxHeight = open ? '0px' : ans.scrollHeight + 'px';
+        const chev = btn.querySelector('[data-chev]');
+        if (chev) chev.style.transform = open ? 'rotate(0deg)' : 'rotate(180deg)';
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

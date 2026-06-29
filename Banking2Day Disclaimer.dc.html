@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#fff}
+@media(max-width:900px){[data-r=navlinks]{display:none!important}[data-r=h1]{font-size:32px!important}[data-r=legalgrid]{grid-template-columns:1fr!important}[data-r=toc]{position:static!important;margin-bottom:24px}}
+</style>
+</helmet>
+<div style="--navy:#0B3B60;--navy-d:#082B47;--teal:#0E7C66;--teal-d:#0A6450;--ink:#17223B;--muted:#526171;--line:#DCE5EC;--surface:#F4F7FA;--mint:#E7F5F3;font-family:'DM Sans',sans-serif;color:#17223B;background:#fff;overflow-x:hidden">
+
+  <!-- HEADER -->
+  <header style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)">
+    <div style="max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:32px">
+      <a href="Banking2Day.dc.html" style="display:flex;align-items:center"><img src="uploads/banking2day-logo.png" alt="Banking2Day" style="height:36px;width:auto"/></a>
+      <nav data-r="navlinks" style="display:flex;gap:24px;margin-left:8px;font-weight:600;font-size:15px;color:#2B3A4B">
+        <a href="Banking2Day.dc.html#loans" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Loans</a>
+        <a href="Banking2Day.dc.html#cards" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Credit Cards</a>
+        <a href="Banking2Day.dc.html#how" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Calculators</a>
+        <a href="Banking2Day About.dc.html" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">About</a>
+      </nav>
+      <a href="Banking2Day Loan Apply.dc.html" style="margin-left:auto;text-decoration:none;background:var(--teal);color:#fff;font-weight:700;font-size:15px;padding:11px 20px;border-radius:8px;box-shadow:0 8px 18px rgba(14,124,102,.22)" style-hover="background:var(--teal-d)">Check eligibility</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="background:linear-gradient(160deg,#0B3B60,#0E5A52);color:#fff">
+    <div style="max-width:1180px;margin:0 auto;padding:52px 24px 44px">
+      <div style="font-size:13px;color:#9FD8C7;font-weight:700;letter-spacing:1.5px">LEGAL</div>
+      <h1 data-r="h1" style="font-family:'Manrope';font-weight:800;font-size:42px;letter-spacing:-.8px;margin:12px 0 0">Disclaimer</h1>
+      <p style="font-size:15px;color:#9FD8C7;margin:12px 0 0;font-weight:600">Last updated: 22 June 2026</p>
+    </div>
+  </section>
+
+  <!-- BODY -->
+  <section style="max-width:1180px;margin:0 auto;padding:48px 24px 64px">
+    <div data-r="legalgrid" style="display:grid;grid-template-columns:240px 1fr;gap:44px;align-items:start">
+      <nav data-r="toc" style="position:sticky;top:88px;display:flex;flex-direction:column;gap:4px;border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--surface)">
+        <div style="font-family:'Manrope';font-weight:800;font-size:13px;color:var(--navy);padding:4px 8px 8px">On this page</div>
+        <a href="#general" style="font-size:13.5px;color:var(--muted);text-decoration:none;padding:7px 8px;border-radius:7px" style-hover="background:#fff;color:var(--teal-d)">1. General</a>
+        <a href="#noadvice" style="font-size:13.5px;color:var(--muted);text-decoration:none;padding:7px 8px;border-radius:7px" style-hover="background:#fff;color:var(--teal-d)">2. Not financial advice</a>
+        <a href="#accuracy" style="font-size:13.5px;color:var(--muted);text-decoration:none;padding:7px 8px;border-radius:7px" style-hover="background:#fff;color:var(--teal-d)">3. Accuracy</a>
+        <a href="#calc" style="font-size:13.5px;color:var(--muted);text-decoration:none;padding:7px 8px;border-radius:7px" style-hover="background:#fff;color:var(--teal-d)">4. Calculators</a>
+        <a href="#external" style="font-size:13.5px;color:var(--muted);text-decoration:none;padding:7px 8px;border-radius:7px" style-hover="background:#fff;color:var(--teal-d)">5. External links</a>
+        <a href="#liability" style="font-size:13.5px;color:var(--muted);text-decoration:none;padding:7px 8px;border-radius:7px" style-hover="background:#fff;color:var(--teal-d)">6. Liability</a>
+        <a href="#contact" style="font-size:13.5px;color:var(--muted);text-decoration:none;padding:7px 8px;border-radius:7px" style-hover="background:#fff;color:var(--teal-d)">7. Contact</a>
+      </nav>
+
+      <div style="max-width:760px">
+        <div style="background:#FFF6E0;border:1px solid #F0DCA8;border-radius:12px;padding:16px 18px;font-size:13.5px;color:#8A6212;line-height:1.6;margin-bottom:28px">This is a sample document provided as a starting template for the Banking2Day prototype. Have it reviewed by a qualified legal professional before publishing.</div>
+
+        <h2 id="general" style="font-family:'Manrope';font-weight:800;font-size:22px;color:var(--navy);scroll-margin-top:88px">1. General disclaimer</h2>
+        <p style="font-size:15.5px;color:var(--muted);line-height:1.75;margin-top:10px">The information on Banking2Day is provided for general informational purposes only. While we strive to keep it accurate and current, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability or availability of the content.</p>
+
+        <h2 id="noadvice" style="font-family:'Manrope';font-weight:800;font-size:22px;color:var(--navy);margin-top:34px;scroll-margin-top:88px">2. Not financial advice</h2>
+        <p style="font-size:15.5px;color:var(--muted);line-height:1.75;margin-top:10px">Banking2Day is an independent comparison platform and is <b style="color:var(--ink)">not a bank, NBFC, lender or financial adviser</b>. Nothing on this site constitutes financial, investment, legal or tax advice. You should consider your own circumstances and, where appropriate, seek advice from a qualified professional before making any financial decision.</p>
+
+        <h2 id="accuracy" style="font-family:'Manrope';font-weight:800;font-size:22px;color:var(--navy);margin-top:34px;scroll-margin-top:88px">3. Accuracy of product information</h2>
+        <p style="font-size:15.5px;color:var(--muted);line-height:1.75;margin-top:10px">Rates, fees, features and eligibility shown are indicative and may change without notice. Product names shown may be neutral placeholders. Final terms are determined solely by the regulated provider after their own assessment. Always verify the latest details directly with the provider before applying.</p>
+
+        <h2 id="calc" style="font-family:'Manrope';font-weight:800;font-size:22px;color:var(--navy);margin-top:34px;scroll-margin-top:88px">4. Calculator estimates</h2>
+        <p style="font-size:15.5px;color:var(--muted);line-height:1.75;margin-top:10px">Our calculators (EMI, eligibility, prepayment, FD, NPS, GST and others) produce estimates based only on the values you enter and standard formulas. They do not account for every fee, charge or lender-specific rule, and actual figures may differ. They are tools to aid understanding, not offers or guarantees.</p>
+
+        <h2 id="external" style="font-family:'Manrope';font-weight:800;font-size:22px;color:var(--navy);margin-top:34px;scroll-margin-top:88px">5. External links</h2>
+        <p style="font-size:15.5px;color:var(--muted);line-height:1.75;margin-top:10px">Our site may contain links to third-party websites. We have no control over their content, policies or practices and accept no responsibility for them. A link does not imply endorsement.</p>
+
+        <h2 id="liability" style="font-family:'Manrope';font-weight:800;font-size:22px;color:var(--navy);margin-top:34px;scroll-margin-top:88px">6. Limitation of liability</h2>
+        <p style="font-size:15.5px;color:var(--muted);line-height:1.75;margin-top:10px">To the fullest extent permitted by law, Banking2Day shall not be liable for any loss or damage — direct, indirect or consequential — arising from your use of, or reliance on, the information, tools or links on this site. Any action you take based on the content is strictly at your own risk.</p>
+
+        <h2 id="contact" style="font-family:'Manrope';font-weight:800;font-size:22px;color:var(--navy);margin-top:34px;scroll-margin-top:88px">7. Contact</h2>
+        <p style="font-size:15.5px;color:var(--muted);line-height:1.75;margin-top:10px">Questions about this disclaimer? Email <a href="mailto:hello@banking2day.com" style="color:var(--teal-d);font-weight:700;text-decoration:none">hello@banking2day.com</a> or write to Banking2Day, Bandra Kurla Complex, Mumbai 400051.</p>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Banking2Day Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:900}}"></script>
+</body>
+</html>

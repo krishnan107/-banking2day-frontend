@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#fff}
+@keyframes b2dfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes b2dpulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}50%{box-shadow:0 0 0 12px rgba(37,211,102,0)}}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:10px;border-radius:999px;background:transparent;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:10px;border-radius:999px;background:linear-gradient(90deg,#0E7C66 0 var(--pct,50%),#D7E5E1 var(--pct,50%) 100%)}
+input[type=range]::-moz-range-track{height:10px;border-radius:999px;background:#D7E5E1}
+input[type=range]::-moz-range-progress{height:10px;border-radius:999px;background:#0E7C66}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;margin-top:-7px;width:24px;height:24px;border-radius:50%;background:#fff;border:5px solid #0E7C66;box-shadow:0 3px 10px rgba(14,124,102,.35)}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;border:5px solid #0E7C66;border-radius:50%;background:#fff}
+@media(max-width:880px){[data-r=two]{grid-template-columns:1fr!important}[data-r=g3]{grid-template-columns:1fr!important}[data-r=g4]{grid-template-columns:repeat(2,1fr)!important}[data-r=g4f]{grid-template-columns:repeat(2,1fr)!important}[data-r=navlinks]{display:none!important}[data-r=h1]{font-size:34px!important}}
+@media(max-width:540px){[data-r=g4]{grid-template-columns:1fr!important}[data-r=g4f]{grid-template-columns:1fr!important}[data-r=footbar]{flex-direction:column!important;align-items:flex-start!important}}
+</style>
+</helmet>
+<div style="--navy:#0B3B60;--navy-d:#082B47;--teal:#0E7C66;--teal-d:#0A6450;--amber:#F4B942;--amber-l:#FFF6E0;--ink:#17223B;--muted:#526171;--line:#DCE5EC;--surface:#F4F7FA;--mint:#E7F5F3;--mint-2:#F2FAF7;font-family:'DM Sans',sans-serif;color:#17223B;background:#fff;overflow-x:hidden">
+
+  <!-- ============ UTILITY BAR ============ -->
+  <div style="background:var(--navy);color:#CBDBE8">
+    <div style="max-width:1180px;margin:0 auto;padding:8px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:13px;font-weight:600;flex-wrap:wrap">
+      <span style="display:inline-flex;align-items:center;gap:8px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z" stroke="#7FC9A6" stroke-width="2" stroke-linejoin="round"/></svg>Independent comparison portal — Banking2Day is not a lender.</span>
+      <div style="display:flex;gap:18px">
+        <a href="#how" style="color:#9FBDD2;text-decoration:none" style-hover="color:#fff">How we review</a>
+        <a href="#learn" style="color:#9FBDD2;text-decoration:none" style-hover="color:#fff">Safety centre</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)">
+    <div style="max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:32px">
+      <a href="#top" style="display:flex;align-items:center"><img src="uploads/banking2day-logo.png" alt="Banking2Day — Your Daily Financial Partner" style="height:38px;width:auto"/></a>
+      <nav data-r="navlinks" style="display:flex;gap:24px;margin-left:8px;font-weight:600;font-size:15px;color:#2B3A4B">
+        <a href="#loans" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Loans</a>
+        <a href="#cards" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Credit Cards</a>
+        <a href="#tools" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Calculators</a>
+        <a href="#score" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Credit Score</a>
+        <a href="#learn" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Learn</a>
+      </nav>
+      <div style="margin-left:auto;display:flex;align-items:center;gap:18px">
+        <a href="#loans" style="text-decoration:none;background:var(--teal);color:#fff;font-weight:700;font-size:15px;padding:11px 20px;border-radius:8px;box-shadow:0 8px 18px rgba(14,124,102,.22)" style-hover="background:var(--teal-d)">Start comparing</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section id="top" data-screen-label="Hero" style="position:relative;background:linear-gradient(180deg,#EEF4F9 0%,#ffffff 78%)">
+    <div data-r="two" style="max-width:1180px;margin:0 auto;padding:60px 24px 70px;display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center">
+      <div>
+        <div style="display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);color:var(--navy);font-weight:700;font-size:13px;padding:7px 13px;border-radius:999px;box-shadow:0 4px 12px rgba(11,59,96,.06)"><span style="color:var(--teal);font-weight:800">₹0</span> to research · <span style="color:var(--teal);font-weight:800">clear</span> disclosures</div>
+        <h1 data-r="h1" style="font-family:'Manrope';font-weight:800;font-size:52px;line-height:1.08;letter-spacing:-1px;margin:18px 0 0;color:var(--navy)">Compare banking products with <span style="color:var(--teal)">clarity.</span></h1>
+        <p style="font-size:18px;line-height:1.6;color:var(--muted);margin:18px 0 0;max-width:520px">Understand rates, fees and affordability before you apply. Dated reviews, clear disclosures, and no pressure to share your details.</p>
+        <div style="display:flex;gap:14px;margin-top:28px;flex-wrap:wrap">
+          <a href="#loans" style="text-decoration:none;background:var(--teal);color:#fff;font-weight:700;font-size:16px;padding:15px 26px;border-radius:10px;box-shadow:0 12px 24px rgba(14,124,102,.26)" style-hover="background:var(--teal-d)">Start comparing</a>
+          <a href="#how" style="text-decoration:none;background:#fff;color:var(--navy);font-weight:700;font-size:16px;padding:15px 26px;border-radius:10px;border:1.5px solid var(--line)" style-hover="border-color:var(--teal);color:var(--teal)">Why trust us</a>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;max-width:440px;box-shadow:0 10px 26px rgba(11,59,96,.06)">
+          <span style="width:42px;height:42px;flex:none;border-radius:11px;background:var(--mint);display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z" stroke="#0E7C66" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12l2.3 2.3L15.5 9.5" stroke="#0E7C66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div><div style="font-family:'Manrope';font-weight:800;font-size:15px;color:var(--ink)">Banking2Day Review Promise</div><div style="font-size:13px;color:var(--muted);font-weight:500">Every comparison shows a review date, disclosure and correction route.</div></div>
+        </div>
+      </div>
+
+      <div style="position:relative">
+        <div style="border-radius:22px;overflow:hidden;box-shadow:0 30px 70px rgba(11,59,96,.22);border:6px solid #fff">
+          <img src="uploads/family-finance.png" alt="A couple reviewing their finances together" style="display:block;width:100%;height:420px;object-fit:cover"/>
+        </div>
+        <div style="position:absolute;top:24px;left:-22px;background:#fff;border-radius:14px;padding:13px 16px;box-shadow:0 16px 36px rgba(11,59,96,.16);display:flex;align-items:center;gap:11px;animation:b2dfloat 5s ease-in-out infinite">
+          <div style="display:flex;gap:1px;color:var(--amber);font-size:15px">★★★★★</div>
+          <div><div style="font-family:'Manrope';font-weight:800;font-size:14px;color:var(--ink)">Trusted reviews</div><div style="font-size:11px;color:var(--muted);font-weight:600">Dated &amp; disclosed</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCT CATEGORIES ============ -->
+  <section style="max-width:1180px;margin:0 auto;padding:60px 24px 8px">
+    <div style="text-align:center;max-width:600px;margin:0 auto">
+      <div style="color:var(--teal-d);font-weight:700;font-size:12px;letter-spacing:1.5px">START HERE</div>
+      <h2 style="font-family:'Manrope';font-weight:800;font-size:34px;letter-spacing:-.5px;margin:8px 0 0;color:var(--navy)">What are you looking for today?</h2>
+    </div>
+    <div data-r="g4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px">
+      <a href="#loans" style="text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px;box-shadow:0 10px 26px rgba(11,59,96,.05)" style-hover="border-color:var(--teal);transform:translateY(-3px)">
+        <span style="width:46px;height:46px;border-radius:12px;background:var(--mint);color:var(--teal);display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="2.5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2.4" stroke="currentColor" stroke-width="2"/></svg></span>
+        <div><div style="font-family:'Manrope';font-weight:800;font-size:16px;color:var(--ink)">Personal Loan</div><div style="font-size:13px;color:var(--muted);margin-top:2px">Compare rates from 10.25% p.a.</div></div>
+      </a>
+      <a href="#cards" style="text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px;box-shadow:0 10px 26px rgba(11,59,96,.05)" style-hover="border-color:var(--teal);transform:translateY(-3px)">
+        <span style="width:46px;height:46px;border-radius:12px;background:#FBEAEA;color:#C84D4D;display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2.5" stroke="currentColor" stroke-width="2"/><path d="M3 9.5h18" stroke="currentColor" stroke-width="2"/></svg></span>
+        <div><div style="font-family:'Manrope';font-weight:800;font-size:16px;color:var(--ink)">Credit Cards</div><div style="font-size:13px;color:var(--muted);margin-top:2px">Cards matched to your spends</div></div>
+      </a>
+      <a href="#loans" style="text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px;box-shadow:0 10px 26px rgba(11,59,96,.05)" style-hover="border-color:var(--teal);transform:translateY(-3px)">
+        <span style="width:46px;height:46px;border-radius:12px;background:#E8EFF7;color:var(--navy);display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 11l8-6 8 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10v9h12v-9" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+        <div><div style="font-family:'Manrope';font-weight:800;font-size:16px;color:var(--ink)">Home Loan</div><div style="font-size:13px;color:var(--muted);margin-top:2px">Explore offers from 8.35% p.a.</div></div>
+      </a>
+      <a href="#score" style="text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px;box-shadow:0 10px 26px rgba(11,59,96,.05)" style-hover="border-color:var(--teal);transform:translateY(-3px)">
+        <span style="width:46px;height:46px;border-radius:12px;background:var(--amber-l);color:#B47B12;display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 14a8 8 0 0116 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 14l4-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        <div><div style="font-family:'Manrope';font-weight:800;font-size:16px;color:var(--ink)">Credit Score</div><div style="font-size:13px;color:var(--muted);margin-top:2px">Understand & improve your profile</div></div>
+      </a>
+      <a href="#loans" style="text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px;box-shadow:0 10px 26px rgba(11,59,96,.05)" style-hover="border-color:var(--teal);transform:translateY(-3px)">
+        <span style="width:46px;height:46px;border-radius:12px;background:#EDE9FB;color:#6D54C2;display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="6.5" rx="6.5" ry="2.5" stroke="currentColor" stroke-width="2"/><path d="M5.5 6.5v11c0 1.4 2.9 2.5 6.5 2.5s6.5-1.1 6.5-2.5v-11" stroke="currentColor" stroke-width="2"/></svg></span>
+        <div><div style="font-family:'Manrope';font-weight:800;font-size:16px;color:var(--ink)">Fixed Deposit</div><div style="font-size:13px;color:var(--muted);margin-top:2px">Compare tenures & senior rates</div></div>
+      </a>
+      <a href="#loans" style="text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px;box-shadow:0 10px 26px rgba(11,59,96,.05)" style-hover="border-color:var(--teal);transform:translateY(-3px)">
+        <span style="width:46px;height:46px;border-radius:12px;background:#E4F3FB;color:#1F7FB0;display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 9l8-5 8 5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M5 9v8M9 9v8M15 9v8M19 9v8M3 19h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        <div><div style="font-family:'Manrope';font-weight:800;font-size:16px;color:var(--ink)">Savings Account</div><div style="font-size:13px;color:var(--muted);margin-top:2px">Fees, benefits & digital access</div></div>
+      </a>
+      <a href="#loans" style="text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px;box-shadow:0 10px 26px rgba(11,59,96,.05)" style-hover="border-color:var(--teal);transform:translateY(-3px)">
+        <span style="width:46px;height:46px;border-radius:12px;background:#E7F6ED;color:#1E8A4C;display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        <div><div style="font-family:'Manrope';font-weight:800;font-size:16px;color:var(--ink)">Business Loan</div><div style="font-size:13px;color:var(--muted);margin-top:2px">Funding for growing firms</div></div>
+      </a>
+      <a href="#tools" style="text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px;box-shadow:0 10px 26px rgba(11,59,96,.05)" style-hover="border-color:var(--teal);transform:translateY(-3px)">
+        <span style="width:46px;height:46px;border-radius:12px;background:#FCE8EF;color:#B83B6C;display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="14" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 7h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="12" r="1" fill="currentColor"/><circle cx="12" cy="12" r="1" fill="currentColor"/><circle cx="15" cy="12" r="1" fill="currentColor"/><circle cx="9" cy="16" r="1" fill="currentColor"/><circle cx="12" cy="16" r="1" fill="currentColor"/></svg></span>
+        <div><div style="font-family:'Manrope';font-weight:800;font-size:16px;color:var(--ink)">EMI Calculators</div><div style="font-size:13px;color:var(--muted);margin-top:2px">Plan your monthly repayments</div></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ CALCULATORS ============ -->
+  <section id="how" style="max-width:1180px;margin:60px auto 0;padding:0 24px">
+    <div style="color:var(--teal-d);font-weight:700;font-size:12px;letter-spacing:1.5px">FREE TOOLS</div>
+    <h2 style="font-family:'Manrope';font-weight:800;font-size:34px;letter-spacing:-.5px;margin:8px 0 0;color:var(--navy)">Plan smart with calculators</h2>
+    <p style="font-size:17px;color:var(--muted);margin:12px 0 0;max-width:680px;line-height:1.6">Explore our easy-to-use loan eligibility, EMI and investment calculators. Check eligibility, estimate EMIs and project returns to make smarter financial decisions. Choose a calculator to get started:</p>
+
+    <div data-r="g3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px;align-items:start">
+
+      <!-- Loan EMI -->
+      <div style="background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 14px 34px rgba(11,59,96,.06)">
+        <div style="display:flex;align-items:center;gap:14px;padding:22px;background:linear-gradient(120deg,#F1ECFA,#F7F3FD)">
+          <span style="width:50px;height:50px;flex:none;border-radius:13px;background:#fff;color:#6D54C2;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(109,84,194,.18)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="14" height="18" rx="2.5" stroke="currentColor" stroke-width="2"/><rect x="8" y="6" width="8" height="3" rx="1" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="13" r="1" fill="currentColor"/><circle cx="12" cy="13" r="1" fill="currentColor"/><circle cx="15" cy="13" r="1" fill="currentColor"/><circle cx="9" cy="17" r="1" fill="currentColor"/><circle cx="12" cy="17" r="1" fill="currentColor"/><circle cx="15" cy="17" r="1" fill="currentColor"/></svg></span>
+          <h3 style="font-family:'Manrope';font-weight:800;font-size:21px;color:var(--navy);line-height:1.2">Loan EMI<br>Calculators</h3>
+        </div>
+        <a href="Banking2Day PL EMI Calculator.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;padding:17px 22px;border-top:1px solid var(--line);font-weight:600;font-size:15px;color:var(--ink)" style-hover="background:var(--mint-2);color:var(--teal-d)">Personal Loan EMI Calculator<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="Banking2Day Business EMI Calculator.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;padding:17px 22px;border-top:1px solid var(--line);font-weight:600;font-size:15px;color:var(--ink)" style-hover="background:var(--mint-2);color:var(--teal-d)">Business Loan EMI Calculator<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="Banking2Day Home EMI Calculator.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;padding:17px 22px;border-top:1px solid var(--line);font-weight:600;font-size:15px;color:var(--ink)" style-hover="background:var(--mint-2);color:var(--teal-d)">Home Loan EMI Calculator<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="Banking2Day Mudra EMI Calculator.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;padding:17px 22px;border-top:1px solid var(--line);font-weight:600;font-size:15px;color:var(--ink)" style-hover="background:var(--mint-2);color:var(--teal-d)">Mudra Loan EMI Calculator<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <!-- Loan Eligibility -->
+      <div style="background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 14px 34px rgba(11,59,96,.06)">
+        <div style="display:flex;align-items:center;gap:14px;padding:22px;background:linear-gradient(120deg,#E7F5EE,#F1FBF6)">
+          <span style="width:50px;height:50px;flex:none;border-radius:13px;background:#fff;color:#1E8A4C;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(30,138,76,.18)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M6 3h9l4 4v14H6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3 style="font-family:'Manrope';font-weight:800;font-size:21px;color:var(--navy);line-height:1.2">Loan Eligibility<br>Calculators</h3>
+        </div>
+        <a href="Banking2Day PL Eligibility Calculator.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;padding:17px 22px;border-top:1px solid var(--line);font-weight:600;font-size:15px;color:var(--ink)" style-hover="background:var(--mint-2);color:var(--teal-d)">Personal Loan Eligibility Calculator<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="Banking2Day Home Eligibility Calculator.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;padding:17px 22px;border-top:1px solid var(--line);font-weight:600;font-size:15px;color:var(--ink)" style-hover="background:var(--mint-2);color:var(--teal-d)">Home Loan Eligibility Calculator<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="Banking2Day PL Prepayment Calculator.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;padding:17px 22px;border-top:1px solid var(--line);font-weight:600;font-size:15px;color:var(--ink)" style-hover="background:var(--mint-2);color:var(--teal-d)">Personal Loan Prepayment Calculator<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="Banking2Day Home Prepayment Calculator.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;padding:17px 22px;border-top:1px solid var(--line);font-weight:600;font-size:15px;color:var(--ink)" style-hover="background:var(--mint-2);color:var(--teal-d)">Home Loan Prepayment Calculator<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <!-- Investment -->
+      <div style="background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 14px 34px rgba(11,59,96,.06)">
+        <div style="display:flex;align-items:center;gap:14px;padding:22px;background:linear-gradient(120deg,#E7EEF9,#F1F6FC)">
+          <span style="width:50px;height:50px;flex:none;border-radius:13px;background:#fff;color:var(--navy);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(11,59,96,.18)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 19V5M4 19h16M8 16l3.5-4 3 2.5L20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3 style="font-family:'Manrope';font-weight:800;font-size:21px;color:var(--navy);line-height:1.2">Investment<br>Calculators</h3>
+        </div>
+        <a href="Banking2Day FD Calculator.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;padding:17px 22px;border-top:1px solid var(--line);font-weight:600;font-size:15px;color:var(--ink)" style-hover="background:var(--mint-2);color:var(--teal-d)">Fixed Deposit Calculator<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="Banking2Day Post Office FD Calculator.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;padding:17px 22px;border-top:1px solid var(--line);font-weight:600;font-size:15px;color:var(--ink)" style-hover="background:var(--mint-2);color:var(--teal-d)">Post Office FD Calculator<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="Banking2Day GST Calculator.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;padding:17px 22px;border-top:1px solid var(--line);font-weight:600;font-size:15px;color:var(--ink)" style-hover="background:var(--mint-2);color:var(--teal-d)">GST Calculator<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="Banking2Day NPS Calculator.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;padding:17px 22px;border-top:1px solid var(--line);font-weight:600;font-size:15px;color:var(--ink)" style-hover="background:var(--mint-2);color:var(--teal-d)">NPS Calculator<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ POPULAR COMPARISON ============ -->
+  <section style="max-width:1180px;margin:0 auto;padding:72px 24px 0">
+    <div data-r="two" style="display:grid;grid-template-columns:.92fr 1.08fr;gap:48px;align-items:center">
+      <div>
+        <div style="color:var(--teal-d);font-weight:700;font-size:12px;letter-spacing:1.5px">POPULAR COMPARISONS</div>
+        <h2 style="font-family:'Manrope';font-weight:800;font-size:34px;letter-spacing:-.5px;margin:10px 0 0;color:var(--navy)">Compare more than the headline rate.</h2>
+        <p style="font-size:17px;color:var(--muted);margin:14px 0 0;max-width:440px">The processing fee, prepayment rule and tenure can change the real cost of borrowing. We show the full picture side by side.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:22px">
+          <div style="display:flex;align-items:center;gap:11px;font-size:15px;color:#2F4049;font-weight:600"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0E7C66"/><path d="M7.5 12.5l3 3 6-6.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Side-by-side product details</div>
+          <div style="display:flex;align-items:center;gap:11px;font-size:15px;color:#2F4049;font-weight:600"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0E7C66"/><path d="M7.5 12.5l3 3 6-6.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Cost and eligibility context</div>
+          <div style="display:flex;align-items:center;gap:11px;font-size:15px;color:#2F4049;font-weight:600"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0E7C66"/><path d="M7.5 12.5l3 3 6-6.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Clear partner disclosures</div>
+        </div>
+        <a href="#loans" style="display:inline-block;text-decoration:none;background:var(--teal);color:#fff;font-weight:700;font-size:15px;padding:13px 24px;border-radius:10px;margin-top:24px;box-shadow:0 12px 24px rgba(14,124,102,.22)" style-hover="background:var(--teal-d)">Compare personal loans</a>
+      </div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:20px;padding:10px;box-shadow:0 24px 50px rgba(11,59,96,.1)">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px 12px"><span style="font-family:'Manrope';font-weight:800;color:var(--navy);font-size:15px">Personal loans · indicative</span><span style="font-size:12px;color:var(--muted);font-weight:600">Updated 18 Jun 2026</span></div>
+        <sc-for list="{{ rates }}" as="r" hint-placeholder-count="4">
+          <div style="display:flex;align-items:center;gap:14px;padding:14px 16px;border-top:1px solid var(--line)">
+            <span style="width:42px;height:42px;flex:none;border-radius:10px;background:var(--surface);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:'Manrope';font-weight:800;font-size:13px;color:var(--navy)">{{ r.initials }}</span>
+            <div style="flex:1"><div style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">{{ r.provider }}</div><div style="font-size:12.5px;color:var(--muted)">{{ r.highlight }}</div></div>
+            <div style="text-align:right"><div style="font-size:11px;color:var(--muted);font-weight:600">Starts from</div><div style="font-family:'Manrope';font-weight:800;font-size:16px;color:var(--teal-d)">{{ r.rate }}</div></div>
+            <span style="font-size:11px;font-weight:700;color:{{ r.tagColor }};background:{{ r.tagBg }};padding:5px 9px;border-radius:999px;min-width:74px;text-align:center">{{ r.tag }}</span>
+          </div>
+        </sc-for>
+        <div style="display:flex;align-items:center;gap:8px;padding:13px 16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);font-weight:500"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#526171" stroke-width="2"/><path d="M12 11v5M12 7.5v.5" stroke="#526171" stroke-width="2" stroke-linecap="round"/></svg>Actual rates depend on lender assessment and your profile.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CREDIT CARDS ============ -->
+  <section id="cards" data-screen-label="Credit cards" style="max-width:1180px;margin:0 auto;padding:80px 24px 0">
+    <div style="text-align:center;max-width:640px;margin:0 auto">
+      <div style="color:var(--teal-d);font-weight:700;font-size:12px;letter-spacing:1.5px">CREDIT CARDS</div>
+      <h2 style="font-family:'Manrope';font-weight:800;font-size:34px;letter-spacing:-.5px;margin:8px 0 0;color:var(--navy)">Find a card that fits your spending</h2>
+      <p style="font-size:17px;color:var(--muted);margin:12px 0 0">Illustrative offers across cashback, travel and rewards — compare benefits side by side.</p>
+    </div>
+
+    <div data-r="g3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:42px">
+      <!-- card 1 -->
+      <div style="position:relative;background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 18px 40px rgba(11,59,96,.06)">
+        <div style="position:absolute;top:18px;right:-1px;background:var(--teal);color:#fff;font-weight:700;font-size:11px;letter-spacing:.5px;padding:6px 13px;border-radius:999px 0 0 999px;box-shadow:0 8px 16px rgba(14,124,102,.25)">★ MOST POPULAR</div>
+        <div style="height:160px;border-radius:14px;padding:18px;background:linear-gradient(135deg,#0E7C66,#13A07C);color:#fff;box-shadow:0 14px 30px rgba(14,124,102,.3)">
+          <div style="display:flex;justify-content:space-between"><span style="font-family:'Manrope';font-weight:700">banking2day</span><span style="font-size:12px;opacity:.85;font-weight:700">cashback</span></div>
+          <div style="width:40px;height:30px;border-radius:6px;background:linear-gradient(135deg,#F6D98A,#D9B25A);margin-top:18px"></div>
+          <div style="letter-spacing:2px;margin-top:14px;font-family:'Manrope';font-size:15px">•••• •••• •••• 9013</div>
+        </div>
+        <div style="margin-top:18px"><div style="font-family:'Manrope';font-weight:700;font-size:20px;color:var(--ink)">Everyday Cashback</div><div style="display:inline-block;background:var(--mint);color:var(--teal-d);font-weight:700;font-size:11px;padding:5px 11px;border-radius:999px;margin-top:8px">Lifetime Free</div></div>
+        <div style="margin-top:16px;display:flex;flex-direction:column;gap:9px">
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#34464F;font-weight:500"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#0E7C66" stroke-width="2"/><path d="M7 12.5l3 3 7-7" stroke="#0E7C66" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>5% back on utility bills</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#34464F;font-weight:500"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#0E7C66" stroke-width="2"/><path d="M7 12.5l3 3 7-7" stroke="#0E7C66" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>1% unlimited on all spends</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#34464F;font-weight:500"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#0E7C66" stroke-width="2"/><path d="M7 12.5l3 3 7-7" stroke="#0E7C66" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>No joining or annual fee</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;background:var(--mint-2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:16px">
+          <div><div style="font-size:11px;color:var(--muted);font-weight:600">Joining fee</div><div style="font-family:'Manrope';font-weight:800;color:var(--ink)">₹0</div></div>
+          <div style="text-align:right"><div style="font-size:11px;color:var(--muted);font-weight:600">Finance charge</div><div style="font-family:'Manrope';font-weight:800;color:var(--ink)">3.4% p.m.</div></div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:16px">
+          <a href="#loans" style="flex:1;text-align:center;text-decoration:none;background:var(--teal);color:#fff;font-weight:700;padding:12px;border-radius:10px" style-hover="background:var(--teal-d)">Apply now</a>
+          <a href="#" style="text-align:center;text-decoration:none;color:var(--teal-d);font-weight:700;padding:12px 14px;border-radius:10px;border:1.5px solid var(--line)" style-hover="border-color:var(--teal)">Details</a>
+        </div>
+      </div>
+      <!-- card 2 -->
+      <div style="position:relative;background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 18px 40px rgba(11,59,96,.06)">
+        <div style="height:160px;border-radius:14px;padding:18px;background:linear-gradient(135deg,#0B3B60,#2E5C84);color:#fff;box-shadow:0 14px 30px rgba(11,59,96,.3)">
+          <div style="display:flex;justify-content:space-between"><span style="font-family:'Manrope';font-weight:700">banking2day</span><span style="font-size:12px;opacity:.85;font-weight:700">travel</span></div>
+          <div style="width:40px;height:30px;border-radius:6px;background:linear-gradient(135deg,#F6D98A,#D9B25A);margin-top:18px"></div>
+          <div style="letter-spacing:2px;margin-top:14px;font-family:'Manrope';font-size:15px">•••• •••• •••• 4471</div>
+        </div>
+        <div style="margin-top:18px"><div style="font-family:'Manrope';font-weight:700;font-size:20px;color:var(--ink)">SkyMiles Travel</div><div style="display:inline-block;background:#E8EFF6;color:#2E5C84;font-weight:700;font-size:11px;padding:5px 11px;border-radius:999px;margin-top:8px">Travel &amp; Lounge</div></div>
+        <div style="margin-top:16px;display:flex;flex-direction:column;gap:9px">
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#34464F;font-weight:500"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#0E7C66" stroke-width="2"/><path d="M7 12.5l3 3 7-7" stroke="#0E7C66" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>8 airport lounge visits/yr</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#34464F;font-weight:500"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#0E7C66" stroke-width="2"/><path d="M7 12.5l3 3 7-7" stroke="#0E7C66" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>2X miles on flights &amp; hotels</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#34464F;font-weight:500"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#0E7C66" stroke-width="2"/><path d="M7 12.5l3 3 7-7" stroke="#0E7C66" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Zero forex markup abroad</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;background:var(--mint-2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:16px">
+          <div><div style="font-size:11px;color:var(--muted);font-weight:600">Annual fee</div><div style="font-family:'Manrope';font-weight:800;color:var(--ink)">₹2,999</div></div>
+          <div style="text-align:right"><div style="font-size:11px;color:var(--muted);font-weight:600">Finance charge</div><div style="font-family:'Manrope';font-weight:800;color:var(--ink)">3.6% p.m.</div></div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:16px">
+          <a href="#loans" style="flex:1;text-align:center;text-decoration:none;background:var(--teal);color:#fff;font-weight:700;padding:12px;border-radius:10px" style-hover="background:var(--teal-d)">Apply now</a>
+          <a href="#" style="text-align:center;text-decoration:none;color:var(--teal-d);font-weight:700;padding:12px 14px;border-radius:10px;border:1.5px solid var(--line)" style-hover="border-color:var(--teal)">Details</a>
+        </div>
+      </div>
+      <!-- card 3 -->
+      <div style="position:relative;background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 18px 40px rgba(11,59,96,.06)">
+        <div style="height:160px;border-radius:14px;padding:18px;background:linear-gradient(135deg,#3A2140,#6E2C5A);color:#fff;box-shadow:0 14px 30px rgba(58,33,64,.3)">
+          <div style="display:flex;justify-content:space-between"><span style="font-family:'Manrope';font-weight:700">banking2day</span><span style="font-size:12px;opacity:.85;font-weight:700">rewards</span></div>
+          <div style="width:40px;height:30px;border-radius:6px;background:linear-gradient(135deg,#F6D98A,#D9B25A);margin-top:18px"></div>
+          <div style="letter-spacing:2px;margin-top:14px;font-family:'Manrope';font-size:15px">•••• •••• •••• 7720</div>
+        </div>
+        <div style="margin-top:18px"><div style="font-family:'Manrope';font-weight:700;font-size:20px;color:var(--ink)">Platinum Rewards</div><div style="display:inline-block;background:#F4E7EE;color:#9A1F54;font-weight:700;font-size:11px;padding:5px 11px;border-radius:999px;margin-top:8px">Premium Rewards</div></div>
+        <div style="margin-top:16px;display:flex;flex-direction:column;gap:9px">
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#34464F;font-weight:500"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#0E7C66" stroke-width="2"/><path d="M7 12.5l3 3 7-7" stroke="#0E7C66" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>10X points on dining &amp; shopping</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#34464F;font-weight:500"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#0E7C66" stroke-width="2"/><path d="M7 12.5l3 3 7-7" stroke="#0E7C66" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Fuel surcharge waiver</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#34464F;font-weight:500"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#0E7C66" stroke-width="2"/><path d="M7 12.5l3 3 7-7" stroke="#0E7C66" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>24×7 concierge service</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;background:var(--mint-2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:16px">
+          <div><div style="font-size:11px;color:var(--muted);font-weight:600">Annual fee</div><div style="font-family:'Manrope';font-weight:800;color:var(--ink)">₹999</div></div>
+          <div style="text-align:right"><div style="font-size:11px;color:var(--muted);font-weight:600">Finance charge</div><div style="font-family:'Manrope';font-weight:800;color:var(--ink)">3.5% p.m.</div></div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:16px">
+          <a href="#loans" style="flex:1;text-align:center;text-decoration:none;background:var(--teal);color:#fff;font-weight:700;padding:12px;border-radius:10px" style-hover="background:var(--teal-d)">Apply now</a>
+          <a href="#" style="text-align:center;text-decoration:none;color:var(--teal-d);font-weight:700;padding:12px 14px;border-radius:10px;border:1.5px solid var(--line)" style-hover="border-color:var(--teal)">Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PERSONAL LOAN + EMI CALC ============ -->
+  <section id="loans" data-screen-label="Personal loan" style="background:var(--surface);margin-top:80px">
+    <div data-r="two" style="max-width:1180px;margin:0 auto;padding:76px 24px;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center">
+      <div>
+        <div style="color:var(--teal-d);font-weight:700;font-size:12px;letter-spacing:1.5px">PERSONAL LOANS · FREE TOOL</div>
+        <h2 style="font-family:'Manrope';font-weight:800;font-size:36px;letter-spacing:-.5px;margin:10px 0 0;color:var(--navy)">Plan your EMI before you <span style="color:var(--teal)">decide</span></h2>
+        <p style="font-size:17px;color:var(--muted);margin:16px 0 0">Borrow with greater clarity and confidence. Move the slider to see your estimated EMI — checking never affects your credit score.</p>
+        <div style="display:flex;flex-direction:column;gap:13px;margin-top:24px">
+          <div style="display:flex;align-items:center;gap:12px;font-size:15px;color:#2F4049;font-weight:600"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#0E7C66"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Flexible tenure from 12 to 60 months</div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:15px;color:#2F4049;font-weight:600"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#0E7C66"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Interest rates starting at 10.5% p.a.</div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:15px;color:#2F4049;font-weight:600"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#0E7C66"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Clear comparison of rates and charges</div>
+        </div>
+      </div>
+      <div style="background:#fff;border-radius:22px;padding:30px;box-shadow:0 30px 60px rgba(11,59,96,.12)">
+        <div style="display:flex;justify-content:space-between;align-items:baseline"><div style="color:var(--muted);font-weight:600;font-size:14px">Loan amount</div><div style="color:var(--muted);font-weight:600;font-size:12px">₹50k – ₹10L</div></div>
+        <div style="font-family:'Manrope';font-weight:800;font-size:40px;color:var(--teal-d);text-align:center;margin:6px 0 18px">{{ loanFmt }}</div>
+        <input type="range" min="{{ loanMin }}" max="{{ loanMax }}" step="10000" value="{{ loanVal }}" oninput="{{ onLoan }}" style="--pct:{{ sliderPct }}%">
+        <div style="display:flex;justify-content:space-between;margin-top:22px;gap:14px">
+          <div style="flex:1;background:var(--mint-2);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center"><div style="font-size:12px;color:var(--muted);font-weight:600">Estimated EMI</div><div style="font-family:'Manrope';font-weight:800;font-size:22px;color:var(--ink);margin-top:2px">{{ emiFmt }}<span style="font-size:12px;color:var(--muted)">/mo</span></div></div>
+          <div style="flex:1;background:var(--mint-2);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center"><div style="font-size:12px;color:var(--muted);font-weight:600">Total payable</div><div style="font-family:'Manrope';font-weight:800;font-size:22px;color:var(--ink);margin-top:2px">{{ totalFmt }}</div></div>
+        </div>
+        <div style="font-size:12px;color:var(--muted);font-weight:600;margin:18px 0 8px">Tenure (months)</div>
+        <div style="display:flex;gap:8px">
+          <button data-t="12" onClick="{{ setTenure }}" style="flex:1;background:#fff;border:1.5px solid var(--line);color:var(--ink);font-weight:700;padding:10px 0;border-radius:10px;cursor:pointer;font-family:'DM Sans'">12</button>
+          <button data-t="24" onClick="{{ setTenure }}" style="flex:1;background:#fff;border:1.5px solid var(--line);color:var(--ink);font-weight:700;padding:10px 0;border-radius:10px;cursor:pointer;font-family:'DM Sans'">24</button>
+          <button data-t="36" onClick="{{ setTenure }}" style="flex:1;background:var(--teal);border:1.5px solid var(--teal);color:#fff;font-weight:700;padding:10px 0;border-radius:10px;cursor:pointer;font-family:'DM Sans'">36</button>
+          <button data-t="48" onClick="{{ setTenure }}" style="flex:1;background:#fff;border:1.5px solid var(--line);color:var(--ink);font-weight:700;padding:10px 0;border-radius:10px;cursor:pointer;font-family:'DM Sans'">48</button>
+          <button data-t="60" onClick="{{ setTenure }}" style="flex:1;background:#fff;border:1.5px solid var(--line);color:var(--ink);font-weight:700;padding:10px 0;border-radius:10px;cursor:pointer;font-family:'DM Sans'">60</button>
+        </div>
+        <a href="Banking2Day Loan Apply.dc.html" style="display:block;text-align:center;text-decoration:none;width:100%;margin-top:22px;cursor:pointer;background:var(--teal);color:#fff;font-family:'Manrope';font-weight:800;font-size:16px;letter-spacing:.3px;padding:16px;border-radius:12px;box-shadow:0 14px 28px rgba(14,124,102,.3)" style-hover="background:var(--teal-d)">Check my eligibility</a>
+        <div style="text-align:center;font-size:12px;color:var(--muted);font-weight:500;margin-top:12px">Indicative figures · checking eligibility won't affect your credit score</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section style="max-width:1180px;margin:0 auto;padding:76px 24px 0">
+    <div style="text-align:center"><div style="color:var(--teal-d);font-weight:700;font-size:12px;letter-spacing:1.5px">HOW IT WORKS</div><h2 style="font-family:'Manrope';font-weight:800;font-size:34px;margin:8px 0 0;color:var(--navy)">From curious to confident in 4 steps</h2></div>
+    <div data-r="g4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px">
+      <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;text-align:center"><div style="width:50px;height:50px;border-radius:13px;margin:0 auto;background:var(--mint);color:var(--teal-d);font-family:'Manrope';font-weight:800;font-size:21px;display:flex;align-items:center;justify-content:center">1</div><div style="font-family:'Manrope';font-weight:700;font-size:17px;margin-top:16px;color:var(--ink)">Tell us about you</div><p style="color:var(--muted);font-size:14px;margin-top:8px">Share a few basics — income, city and what you need.</p></div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;text-align:center"><div style="width:50px;height:50px;border-radius:13px;margin:0 auto;background:var(--mint);color:var(--teal-d);font-family:'Manrope';font-weight:800;font-size:21px;display:flex;align-items:center;justify-content:center">2</div><div style="font-family:'Manrope';font-weight:700;font-size:17px;margin-top:16px;color:var(--ink)">See matched offers</div><p style="color:var(--muted);font-size:14px;margin-top:8px">We surface cards &amp; loans you're likely to qualify for.</p></div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;text-align:center"><div style="width:50px;height:50px;border-radius:13px;margin:0 auto;background:var(--mint);color:var(--teal-d);font-family:'Manrope';font-weight:800;font-size:21px;display:flex;align-items:center;justify-content:center">3</div><div style="font-family:'Manrope';font-weight:700;font-size:17px;margin-top:16px;color:var(--ink)">Compare the fine print</div><p style="color:var(--muted);font-size:14px;margin-top:8px">Weigh rates, fees and terms with full transparency.</p></div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;text-align:center"><div style="width:50px;height:50px;border-radius:13px;margin:0 auto;background:var(--mint);color:var(--teal-d);font-family:'Manrope';font-weight:800;font-size:21px;display:flex;align-items:center;justify-content:center">4</div><div style="font-family:'Manrope';font-weight:700;font-size:17px;margin-top:16px;color:var(--ink)">Apply with the lender</div><p style="color:var(--muted);font-size:14px;margin-top:8px">Continue on the provider's secure application.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ TRANSPARENCY ============ -->
+  <section style="max-width:1180px;margin:0 auto;padding:76px 24px 0">
+    <div data-r="two" style="display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;align-items:center">
+      <div style="background:linear-gradient(150deg,var(--navy),var(--navy-d));border-radius:22px;padding:38px;color:#fff">
+        <span style="width:50px;height:50px;border-radius:13px;background:rgba(255,255,255,.12);color:#7FC9A6;display:flex;align-items:center;justify-content:center;font-family:'Manrope';font-weight:800;font-size:20px">₹</span>
+        <div style="font-size:13px;font-weight:700;letter-spacing:1.2px;color:#9FBDD2;margin-top:18px">VISITOR PRICE</div>
+        <div style="font-family:'Manrope';font-weight:800;font-size:54px;line-height:1;margin-top:4px">₹0</div>
+        <div style="font-family:'Manrope';font-weight:700;font-size:19px;margin-top:10px">No platform fee to research</div>
+        <p style="font-size:15px;color:#C3D5E2;margin-top:8px;line-height:1.6">Browse products, read guides and run calculations without paying Banking2Day.</p>
+      </div>
+      <div>
+        <div style="color:var(--teal-d);font-weight:700;font-size:12px;letter-spacing:1.5px">TRANSPARENT BY DESIGN</div>
+        <h2 style="font-family:'Manrope';font-weight:800;font-size:32px;letter-spacing:-.5px;margin:10px 0 0;color:var(--navy)">You should know who pays before you click.</h2>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:22px">
+          <div style="display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px"><span style="width:40px;height:40px;flex:none;border-radius:10px;background:var(--mint);color:var(--teal);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 10h18" stroke="currentColor" stroke-width="2"/></svg></span><div><div style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">Referral fees are disclosed</div><div style="font-size:13.5px;color:var(--muted);margin-top:2px">Some providers may pay us after a qualified referral. The notice stays near the comparison.</div></div></div>
+          <div style="display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px"><span style="width:40px;height:40px;flex:none;border-radius:10px;background:var(--mint);color:var(--teal);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M5 8l7-4 7 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 8l-2 6h4zM19 8l-2 6h4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><div><div style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">Facts don't move for commission</div><div style="font-size:13.5px;color:var(--muted);margin-top:2px">Commercial relationships must not hide costs, reorder facts or remove limitations.</div></div></div>
+          <div style="display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px"><span style="width:40px;height:40px;flex:none;border-radius:10px;background:var(--mint);color:var(--teal);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><div><div style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">No approval promises</div><div style="font-size:13.5px;color:var(--muted);margin-top:2px">Only the provider can assess eligibility, approve credit or set the final terms.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CREDIT SCORE ============ -->
+  <section id="score" data-screen-label="Credit score" style="max-width:1180px;margin:0 auto;padding:76px 24px 0">
+    <div data-r="two" style="background:#fff;border:1px solid var(--line);border-radius:22px;padding:46px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;box-shadow:0 18px 40px rgba(11,59,96,.06)">
+      <div>
+        <div style="color:var(--teal-d);font-weight:700;font-size:12px;letter-spacing:1.5px">CREDIT SCORE</div>
+        <h2 style="font-family:'Manrope';font-weight:800;font-size:32px;letter-spacing:-.5px;color:var(--navy);margin:8px 0 0">Your credit score matters</h2>
+        <p style="font-size:17px;color:var(--muted);margin:14px 0 0;max-width:420px">Know and improve your credit score to unlock better cards, lower interest rates and higher loan limits.</p>
+        <a href="#" style="display:inline-block;text-decoration:none;background:var(--navy);color:#fff;font-weight:700;font-size:16px;padding:14px 28px;border-radius:10px;margin-top:24px;box-shadow:0 12px 24px rgba(11,59,96,.2)" style-hover="background:var(--navy-d)">Check my score — free</a>
+      </div>
+      <div style="display:flex;justify-content:center"><img src="uploads/unnamed.gif" alt="Animated credit score meter" style="display:block;width:100%;max-width:400px;height:auto"/></div>
+    </div>
+  </section>
+
+  <!-- ============ LEARN / ARTICLES ============ -->
+  <section id="learn" data-screen-label="Learn" style="max-width:1180px;margin:0 auto;padding:76px 24px 0">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px">
+      <div><div style="color:var(--teal-d);font-weight:700;font-size:12px;letter-spacing:1.5px">LATEST FROM THE DESK</div><h2 style="font-family:'Manrope';font-weight:800;font-size:32px;margin:8px 0 0;color:var(--navy)">Banking explained for real life</h2></div>
+      <a href="#" style="text-decoration:none;color:var(--teal-d);font-weight:700;font-size:15px">All articles →</a>
+    </div>
+    <div data-r="g3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px">
+      <article style="background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 14px 34px rgba(11,59,96,.06)" style-hover="transform:translateY(-3px)">
+        <div style="position:relative;height:180px"><img src="uploads/home-loan-guide.png" alt="" style="width:100%;height:100%;object-fit:cover"/><span style="position:absolute;top:12px;left:12px;background:rgba(11,59,96,.92);color:#fff;font-weight:700;font-size:11px;padding:5px 10px;border-radius:6px">Home Loans</span></div>
+        <div style="padding:20px"><div style="font-size:12.5px;color:var(--muted);font-weight:600">18 Jun 2026 · 7 min read</div><h3 style="font-family:'Manrope';font-weight:700;font-size:18px;margin:8px 0 0;color:var(--ink);line-height:1.3">How much home loan EMI can you comfortably afford?</h3><p style="font-size:14px;color:var(--muted);margin-top:8px;line-height:1.55">A practical framework to balance down payment, tenure, interest and emergency savings.</p><a href="#" style="display:inline-block;text-decoration:none;color:var(--teal-d);font-weight:700;font-size:14px;margin-top:12px">Read guide →</a></div>
+      </article>
+      <article style="background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 14px 34px rgba(11,59,96,.06)" style-hover="transform:translateY(-3px)">
+        <div style="position:relative;height:180px"><img src="uploads/fraud-guide.jpg" alt="" style="width:100%;height:100%;object-fit:cover"/><span style="position:absolute;top:12px;left:12px;background:rgba(11,59,96,.92);color:#fff;font-weight:700;font-size:11px;padding:5px 10px;border-radius:6px">Banking Safety</span></div>
+        <div style="padding:20px"><div style="font-size:12.5px;color:var(--muted);font-weight:600">17 Jun 2026 · 5 min read</div><h3 style="font-family:'Manrope';font-weight:700;font-size:18px;margin:8px 0 0;color:var(--ink);line-height:1.3">The 10-minute digital banking fraud safety check</h3><p style="font-size:14px;color:var(--muted);margin-top:8px;line-height:1.55">Protect your UPI, cards and mobile banking with a simple monthly security routine.</p><a href="#" style="display:inline-block;text-decoration:none;color:var(--teal-d);font-weight:700;font-size:14px;margin-top:12px">Read guide →</a></div>
+      </article>
+      <article style="background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 14px 34px rgba(11,59,96,.06)" style-hover="transform:translateY(-3px)">
+        <div style="position:relative;height:180px"><img src="uploads/property-tax-guide.jpg" alt="" style="width:100%;height:100%;object-fit:cover"/><span style="position:absolute;top:12px;left:12px;background:rgba(11,59,96,.92);color:#fff;font-weight:700;font-size:11px;padding:5px 10px;border-radius:6px">Money Guide</span></div>
+        <div style="padding:20px"><div style="font-size:12.5px;color:var(--muted);font-weight:600">15 Jun 2026 · 8 min read</div><h3 style="font-family:'Manrope';font-weight:700;font-size:18px;margin:8px 0 0;color:var(--ink);line-height:1.3">Selling property? Understand the banking and tax paperwork</h3><p style="font-size:14px;color:var(--muted);margin-top:8px;line-height:1.55">A plain-language guide to payment trails, loan closure letters and capital-gains records.</p><a href="#" style="display:inline-block;text-decoration:none;color:var(--teal-d);font-weight:700;font-size:14px;margin-top:12px">Read guide →</a></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section style="max-width:820px;margin:0 auto;padding:80px 24px 0">
+    <div style="text-align:center;margin-bottom:34px"><div style="color:var(--teal-d);font-weight:700;font-size:12px;letter-spacing:1.5px">FAQ</div><h2 style="font-family:'Manrope';font-weight:800;font-size:32px;margin:8px 0 0;color:var(--navy)">Questions, answered</h2></div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden">
+        <button onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:none;cursor:pointer;padding:20px 22px;text-align:left;font-family:'DM Sans';font-weight:700;font-size:16px;color:var(--ink)">Does checking eligibility affect my credit score?<span data-chev style="color:var(--teal);transition:transform .2s">▾</span></button>
+        <div data-open="0" style="max-height:0;overflow:hidden;transition:max-height .25s ease"><p style="padding:0 22px 20px;color:var(--muted);font-size:15px;line-height:1.6">No. We run a soft enquiry to show indicative offers, which has zero impact on your credit score. A hard enquiry only happens if you choose to formally apply with the lender.</p></div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden">
+        <button onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:none;cursor:pointer;padding:20px 22px;text-align:left;font-family:'DM Sans';font-weight:700;font-size:16px;color:var(--ink)">Is Banking2Day a lender?<span data-chev style="color:var(--teal);transition:transform .2s">▾</span></button>
+        <div data-open="0" style="max-height:0;overflow:hidden;transition:max-height .25s ease"><p style="padding:0 22px 20px;color:var(--muted);font-size:15px;line-height:1.6">No. We're an independent information and comparison platform that helps you discover and compare offers from regulated partner banks and NBFCs. Final approval and terms rest with the lender.</p></div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden">
+        <button onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:none;cursor:pointer;padding:20px 22px;text-align:left;font-family:'DM Sans';font-weight:700;font-size:16px;color:var(--ink)">How does Banking2Day make money?<span data-chev style="color:var(--teal);transition:transform .2s">▾</span></button>
+        <div data-open="0" style="max-height:0;overflow:hidden;transition:max-height .25s ease"><p style="padding:0 22px 20px;color:var(--muted);font-size:15px;line-height:1.6">Researching with us is free. Some providers may pay a referral fee after a qualified referral — and that relationship is disclosed near the comparison. It never changes the facts we show.</p></div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden">
+        <button onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:none;cursor:pointer;padding:20px 22px;text-align:left;font-family:'DM Sans';font-weight:700;font-size:16px;color:var(--ink)">What documents will I need to apply?<span data-chev style="color:var(--teal);transition:transform .2s">▾</span></button>
+        <div data-open="0" style="max-height:0;overflow:hidden;transition:max-height .25s ease"><p style="padding:0 22px 20px;color:var(--muted);font-size:15px;line-height:1.6">Typically your PAN, Aadhaar and recent proof of income (salary slips or bank statements). Exact requirements depend on the partner bank and product you choose.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section style="max-width:1180px;margin:76px auto 0;padding:0 24px">
+    <div style="background:var(--mint);border:1px solid #CFE7DD;border-radius:22px;padding:40px;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap">
+      <div style="flex:1;min-width:260px"><div style="color:var(--teal-d);font-weight:700;font-size:12px;letter-spacing:1.5px">WEEKLY MONEY BRIEFING</div><h2 style="font-family:'Manrope';font-weight:800;font-size:28px;margin:8px 0 0;color:var(--navy)">One useful banking update. Every Friday.</h2><p style="font-size:15px;color:var(--muted);margin-top:6px">Rates, rules, fraud alerts and money guides in a five-minute read.</p></div>
+      <sc-if value="{{ subscribed }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #CFE7DD;border-radius:12px;padding:16px 20px;font-weight:700;color:var(--teal-d)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0E7C66"/><path d="M7.5 12.5l3 3 6-6.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>You're on the list. Welcome to Banking2Day.</div>
+      </sc-if>
+      <sc-if value="{{ notSubscribed }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ onSubscribe }}" style="display:flex;gap:10px;flex-wrap:wrap">
+          <input type="email" required placeholder="you@example.com" value="{{ email }}" oninput="{{ onEmail }}" style="border:1.5px solid var(--line);border-radius:10px;padding:14px 16px;font-size:15px;min-width:240px;font-family:'DM Sans';outline:none" style-focus="border-color:var(--teal)">
+          <button type="submit" style="border:none;cursor:pointer;background:var(--teal);color:#fff;font-family:'Manrope';font-weight:700;font-size:15px;padding:14px 24px;border-radius:10px" style-hover="background:var(--teal-d)">Subscribe</button>
+        </form>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- ============ CTA BAND ============ -->
+  <section style="max-width:1180px;margin:0 auto;padding:76px 24px">
+    <div style="background:linear-gradient(135deg,var(--navy),var(--teal));border-radius:26px;padding:54px;text-align:center;color:#fff;position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.03) 0 16px,transparent 16px 32px)"></div>
+      <div style="position:relative">
+        <h2 style="font-family:'Manrope';font-weight:800;font-size:36px;letter-spacing:-.5px">Ready to find your match?</h2>
+        <p style="font-size:17px;opacity:.88;margin:12px 0 0">Compare cards and check your loan eligibility in under two minutes.</p>
+        <div style="display:flex;gap:14px;justify-content:center;margin-top:28px;flex-wrap:wrap">
+          <a href="#cards" style="text-decoration:none;background:#fff;color:var(--navy);font-weight:700;font-size:16px;padding:15px 30px;border-radius:12px" style-hover="filter:brightness(.96)">Browse credit cards</a>
+          <a href="Banking2Day Loan Apply.dc.html" style="text-decoration:none;background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.5);color:#fff;font-weight:700;font-size:16px;padding:15px 30px;border-radius:12px" style-hover="background:rgba(255,255,255,.24)">Check loan eligibility</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <dc-import name="Banking2Day Footer" hint-size="100%,560px"></dc-import>
+  <footer style="display:none">
+    <div data-r="g4f" style="max-width:1180px;margin:0 auto;padding:54px 24px 30px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:32px">
+      <div>
+        <div style="display:inline-flex;background:#fff;border-radius:10px;padding:8px 12px"><img src="uploads/banking2day-logo.png" alt="Banking2Day — Your Daily Financial Partner" style="height:32px;width:auto"/></div>
+        <p style="font-size:13.5px;line-height:1.6;margin-top:16px;max-width:300px">Compare banking products, understand the fine print and make better financial decisions — all in one independent place.</p>
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:18px;font-size:13.5px">
+          <a href="mailto:hello@banking2day.com" style="display:flex;align-items:center;gap:9px;color:inherit;text-decoration:none" style-hover="color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#7FC9A6" stroke-width="2"/><path d="M4 7l8 6 8-6" stroke="#7FC9A6" stroke-width="2" stroke-linecap="round"/></svg>hello@banking2day.com</a>
+          <a href="tel:+918000000000" style="display:flex;align-items:center;gap:9px;color:inherit;text-decoration:none" style-hover="color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2a12 12 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke="#7FC9A6" stroke-width="2" stroke-linejoin="round"/></svg>+91 80000 00000</a>
+          <div style="display:flex;align-items:flex-start;gap:9px;color:#7E96A8"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex:none;margin-top:1px"><path d="M12 21c5-4.5 7-8 7-11a7 7 0 10-14 0c0 3 2 6.5 7 11z" stroke="#7FC9A6" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="#7FC9A6" stroke-width="2"/></svg>Bandra Kurla Complex, Mumbai 400051</div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:18px">
+          <a href="#" aria-label="LinkedIn" style="width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center" style-hover="background:var(--teal)"><svg width="17" height="17" viewBox="0 0 24 24" fill="#fff"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95C21.4 8.75 22 11 22 14v7h-4v-6.2c0-1.5-.03-3.4-2.08-3.4-2.08 0-2.4 1.6-2.4 3.3V21h-4z"/></svg></a>
+          <a href="#" aria-label="X" style="width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center" style-hover="background:var(--teal)"><svg width="15" height="15" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 3h3l-6.6 7.6L22 21h-5.7l-4.5-5.8L6.7 21H3.6l7-8.1L2.3 3H8l4 5.3zM16.4 19.2h1.7L7.7 4.7H5.9z"/></svg></a>
+          <a href="#" aria-label="YouTube" style="width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center" style-hover="background:var(--teal)"><svg width="17" height="17" viewBox="0 0 24 24" fill="#fff"><path d="M23 12s0-3.3-.4-4.9a2.6 2.6 0 00-1.8-1.8C19.2 5 12 5 12 5s-7.2 0-8.8.3A2.6 2.6 0 001.4 7.1C1 8.7 1 12 1 12s0 3.3.4 4.9a2.6 2.6 0 001.8 1.8C4.8 19 12 19 12 19s7.2 0 8.8-.3a2.6 2.6 0 001.8-1.8C23 15.3 23 12 23 12zM9.8 15.3V8.7l5.7 3.3z"/></svg></a>
+          <a href="#" aria-label="Instagram" style="width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center" style-hover="background:var(--teal)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#fff" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="#fff"/></svg></a>
+        </div>
+      </div>
+      <div><div style="color:#fff;font-weight:700;font-size:14px;margin-bottom:14px">Compare</div><div style="display:flex;flex-direction:column;gap:10px;font-size:14px"><a href="#loans" style="color:inherit;text-decoration:none" style-hover="color:#fff">Personal loans</a><a href="#cards" style="color:inherit;text-decoration:none" style-hover="color:#fff">Credit cards</a><a href="#loans" style="color:inherit;text-decoration:none" style-hover="color:#fff">Home loans</a><a href="#loans" style="color:inherit;text-decoration:none" style-hover="color:#fff">Business loans</a><a href="#loans" style="color:inherit;text-decoration:none" style-hover="color:#fff">Fixed deposits</a><a href="#score" style="color:inherit;text-decoration:none" style-hover="color:#fff">Credit score</a></div></div>
+      <div><div style="color:#fff;font-weight:700;font-size:14px;margin-bottom:14px">Calculators</div><div style="display:flex;flex-direction:column;gap:10px;font-size:14px"><a href="Banking2Day PL EMI Calculator.dc.html" style="color:inherit;text-decoration:none" style-hover="color:#fff">Personal loan EMI</a><a href="Banking2Day Home EMI Calculator.dc.html" style="color:inherit;text-decoration:none" style-hover="color:#fff">Home loan EMI</a><a href="Banking2Day PL Eligibility Calculator.dc.html" style="color:inherit;text-decoration:none" style-hover="color:#fff">Loan eligibility</a><a href="Banking2Day FD Calculator.dc.html" style="color:inherit;text-decoration:none" style-hover="color:#fff">Fixed deposit</a><a href="Banking2Day NPS Calculator.dc.html" style="color:inherit;text-decoration:none" style-hover="color:#fff">NPS</a><a href="Banking2Day GST Calculator.dc.html" style="color:inherit;text-decoration:none" style-hover="color:#fff">GST</a></div></div>
+      <div><div style="color:#fff;font-weight:700;font-size:14px;margin-bottom:14px">Learn &amp; trust</div><div style="display:flex;flex-direction:column;gap:10px;font-size:14px"><a href="#learn" style="color:inherit;text-decoration:none" style-hover="color:#fff">Banking guides</a><a href="#learn" style="color:inherit;text-decoration:none" style-hover="color:#fff">Fraud safety centre</a><a href="#how" style="color:inherit;text-decoration:none" style-hover="color:#fff">How we review</a><a href="#how" style="color:inherit;text-decoration:none" style-hover="color:#fff">Our methodology</a><a href="#" style="color:inherit;text-decoration:none" style-hover="color:#fff">Help centre</a></div></div>
+      <div><div style="color:#fff;font-weight:700;font-size:14px;margin-bottom:14px">Company</div><div style="display:flex;flex-direction:column;gap:10px;font-size:14px"><a href="Banking2Day Company.dc.html#about" style="color:inherit;text-decoration:none" style-hover="color:#fff">About us</a><a href="Banking2Day Company.dc.html#earn" style="color:inherit;text-decoration:none" style-hover="color:#fff">How we earn money</a><a href="Banking2Day Company.dc.html#careers" style="color:inherit;text-decoration:none" style-hover="color:#fff">Careers</a><a href="Banking2Day Company.dc.html#contact" style="color:inherit;text-decoration:none" style-hover="color:#fff">Contact us</a></div></div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.1)"><div style="max-width:1180px;margin:0 auto;padding:18px 24px;font-size:12px;line-height:1.6;color:#7E96A8">Banking2Day is an independent information and comparison platform — not a bank, NBFC or financial adviser. We do not lend, accept deposits or guarantee approval. Product names shown are neutral placeholders; final rates, fees, eligibility and terms are set solely by the regulated provider after their own assessment. Some providers may pay us a referral fee, which is disclosed near the relevant comparison and never changes the facts we show.</div></div>
+    <div style="border-top:1px solid rgba(255,255,255,.1)"><div data-r="footbar" style="max-width:1180px;margin:0 auto;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:12.5px;color:#7E96A8">
+      <span>© 2026 Banking2Day. All rights reserved. Rates and product details are illustrative — verify with the provider.</span>
+      <div style="display:flex;gap:18px;flex-wrap:wrap"><a href="#" style="color:inherit;text-decoration:none" style-hover="color:#fff">Privacy policy</a><a href="#" style="color:inherit;text-decoration:none" style-hover="color:#fff">Terms of use</a><a href="#" style="color:inherit;text-decoration:none" style-hover="color:#fff">Disclaimer</a><a href="#" style="color:inherit;text-decoration:none" style-hover="color:#fff">Cookie policy</a></div>
+    </div></div>
+  </footer>
+
+  <!-- ============ WHATSAPP CHAT ============ -->
+  <sc-if value="{{ chatOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;bottom:90px;right:24px;z-index:80;width:330px;max-width:calc(100vw - 36px);background:#fff;border-radius:18px;box-shadow:0 24px 60px rgba(11,59,96,.28);overflow:hidden;border:1px solid var(--line)">
+      <div style="background:#25D366;color:#fff;padding:16px 18px;display:flex;align-items:center;gap:11px">
+        <span style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M19.05 4.91A9.82 9.82 0 0012.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21h.004c5.46 0 9.91-4.45 9.91-9.91a9.85 9.85 0 00-2.9-7.01zm-7.01 15.24h-.003a8.2 8.2 0 01-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.18 8.18 0 01-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 012.41 5.82c0 4.54-3.69 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg></span>
+        <div style="flex:1"><div style="font-family:'Manrope';font-weight:700;font-size:15px">Banking2Day Assistant</div><div style="font-size:11px;opacity:.85">Online · instant answers</div></div>
+        <button onClick="{{ toggleChat }}" style="background:none;border:none;color:#fff;cursor:pointer;font-size:18px;line-height:1">✕</button>
+      </div>
+      <div style="background:#FFF7E0;color:#8A6D1E;font-size:11.5px;font-weight:600;padding:8px 14px;display:flex;align-items:center;gap:7px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="5" y="10" width="14" height="10" rx="2" stroke="#8A6D1E" stroke-width="2"/><path d="M8 10V7a4 4 0 018 0v3" stroke="#8A6D1E" stroke-width="2"/></svg>Never share an OTP, PIN, CVV or password.</div>
+      <div ref="{{ chatScrollRef }}" style="padding:16px;display:flex;flex-direction:column;gap:10px;background:var(--surface);height:280px;overflow-y:auto">
+        <sc-for list="{{ messages }}" as="m" hint-placeholder-count="1">
+          <div style="align-self:{{ m.align }};background:{{ m.bg }};color:{{ m.color }};border:{{ m.border }};border-radius:14px;padding:10px 13px;font-size:13.5px;line-height:1.5;max-width:85%;white-space:pre-line">{{ m.text }}</div>
+        </sc-for>
+      </div>
+      <sc-if value="{{ leadFormVisible }}" hint-placeholder-val="{{ false }}">
+        <form onSubmit="{{ submitLead }}" style="padding:12px 14px;background:#EFF6F4;border-top:1px solid #CFE7DD;display:flex;flex-direction:column;gap:8px">
+          <div style="font-size:12.5px;font-weight:700;color:var(--teal-d)">Want our team to call you with full details?</div>
+          <input value="{{ leadName }}" oninput="{{ onLeadName }}" placeholder="Your name" style="border:1.5px solid var(--line);border-radius:9px;padding:9px 12px;font-size:13px;font-family:'DM Sans';outline:none" style-focus="border-color:var(--teal)"/>
+          <input value="{{ leadPhone }}" oninput="{{ onLeadPhone }}" inputmode="numeric" placeholder="Mobile number" style="border:1.5px solid var(--line);border-radius:9px;padding:9px 12px;font-size:13px;font-family:'DM Sans';outline:none" style-focus="border-color:var(--teal)"/>
+          <button type="submit" style="border:none;background:var(--teal);color:#fff;font-family:'Manrope';font-weight:700;font-size:13px;padding:10px;border-radius:9px;cursor:pointer" style-hover="background:var(--teal-d)">Request a callback</button>
+        </form>
+      </sc-if>
+      <div style="padding:10px 12px;background:#fff;border-top:1px solid var(--line)">
+        <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:8px">
+          <sc-for list="{{ quickReplies }}" as="q" hint-placeholder-count="4">
+            <button onClick="{{ q.action }}" style="background:var(--mint);border:1px solid #CFE7DD;color:var(--teal-d);font-weight:700;font-size:12px;padding:7px 11px;border-radius:999px;cursor:pointer;font-family:'DM Sans'" style-hover="background:#D7EEE6">{{ q.label }}</button>
+          </sc-for>
+        </div>
+        <form onSubmit="{{ sendMsg }}" style="display:flex;gap:8px;align-items:center">
+          <input value="{{ chatInput }}" oninput="{{ onChatInput }}" placeholder="Type your question…" style="flex:1;border:1.5px solid var(--line);border-radius:999px;padding:10px 14px;font-size:13.5px;font-family:'DM Sans';outline:none" style-focus="border-color:var(--teal)"/>
+          <button type="submit" aria-label="Send" style="width:40px;height:40px;flex:none;border-radius:50%;border:none;background:var(--teal);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:var(--teal-d)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12l16-8-6 16-3-6-7-2z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg></button>
+        </form>
+      </div>
+    </div>
+  </sc-if>
+  <sc-if value="{{ chatVisible }}" hint-placeholder-val="{{ true }}">
+  <div style="position:fixed;bottom:24px;right:24px;z-index:80">
+  <button onClick="{{ toggleChat }}" style="display:flex;align-items:center;gap:9px;background:#25D366;color:#fff;border:none;cursor:pointer;font-family:'Manrope';font-weight:700;font-size:14px;padding:13px 18px;border-radius:999px;box-shadow:0 12px 30px rgba(37,211,102,.45);animation:b2dpulse 2.6s ease-in-out infinite" style-hover="background:#1EBE5A">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M19.05 4.91A9.82 9.82 0 0012.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21h.004c5.46 0 9.91-4.45 9.91-9.91a9.85 9.85 0 00-2.9-7.01zm-7.01 15.24h-.003a8.2 8.2 0 01-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.18 8.18 0 01-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 012.41 5.82c0 4.54-3.69 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+    Chat with us
+  </button>
+    <button onClick="{{ hideChat }}" aria-label="Close chat" style="position:absolute;top:-8px;right:-8px;width:24px;height:24px;border-radius:50%;background:#fff;border:1.5px solid #E0533B;color:#E0533B;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(0,0,0,.2);padding:0;line-height:1" style-hover="background:#E0533B;color:#fff">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180},&quot;loanMax&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:1000000,&quot;min&quot;:200000,&quot;max&quot;:2000000,&quot;step&quot;:50000,&quot;tsType&quot;:&quot;number&quot;},&quot;loanMin&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:50000,&quot;min&quot;:10000,&quot;max&quot;:200000,&quot;step&quot;:10000,&quot;tsType&quot;:&quot;number&quot;},&quot;ratePct&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:10.5,&quot;min&quot;:8,&quot;max&quot;:24,&quot;step&quot;:0.5,&quot;tsType&quot;:&quot;number&quot;}}">
+class Component extends DCLogic {
+  state = { loan: 500000, tenure: 36, subscribed: false, email: "", chatOpen: false, chatHidden: false, chatInput: "", leadName: "", leadPhone: "", firstQuestion: "", leadOffered: false, leadSent: false, messages: [{ from: "bot", text: "Hi! I'm the Banking2Day assistant. Ask me about loans, EMI, credit score, cards or safety — or tap a topic below." }] };
+
+  botReply(text){
+    const q = text.toLowerCase();
+    const has = (...w) => w.some(x => q.includes(x));
+    if (has("emi", "instal", "calculat")) return "You can estimate your EMI on our free calculators — Personal, Home, Business and more. Move the sliders for amount, rate and tenure to see your monthly payment instantly. Open the Calculators section from the menu to try one.";
+    if (has("personal loan")) return "Personal loans on Banking2Day start from around 10.5% p.a., with flexible tenures of 12–60 months. We show the rate, processing fee and prepayment terms side by side. Checking eligibility never affects your credit score.";
+    if (has("home loan")) return "Home loans start from about 8.35% p.a. with tenures up to 30 years. Use the Home Loan EMI and Eligibility calculators to plan your budget before applying.";
+    if (has("business loan")) return "Business loans help fund growing firms, typically from 15% p.a. Try the Business Loan EMI calculator to plan repayments.";
+    if (has("eligib", "qualify", "how much can i")) return "Eligibility is mainly based on your income and existing EMIs (a FOIR of ~50%). Our Loan Eligibility calculator estimates how much you could borrow — with no impact on your credit score.";
+    if (has("credit score", "cibil", "score")) return "You can check your credit score for free, refreshed monthly, with zero impact. A higher score unlocks better rates and limits. Visit the Credit Score page to check yours.";
+    if (has("card", "cashback", "rewards")) return "We compare cashback, travel and rewards cards — including lifetime-free options. Each card shows its fees and benefits clearly so you can match one to your spending.";
+    if (has("prepay", "foreclos")) return "Prepaying reduces your principal, so you save interest or shorten your tenure. Our Prepayment calculator shows exactly how much you'd save for a given lump sum.";
+    if (has("fd", "fixed deposit", "invest", "nps", "gst")) return "We have investment tools too — Fixed Deposit, Post Office FD, NPS and GST calculators. Find them in the Calculators section.";
+    if (has("otp", "fraud", "safe", "scam", "pin", "cvv")) return "Important: never share an OTP, PIN, CVV or password with anyone — Banking2Day will never ask for them. See our Fraud Safety guide in the Learn section for a quick monthly security checklist.";
+    if (has("fee", "charge", "cost", "free", "pay")) return "Researching on Banking2Day is completely free. We may earn a referral fee from some providers — always disclosed near the comparison — and it never changes the facts we show.";
+    if (has("human", "agent", "call", "contact", "talk")) return "You can reach our team via the Contact page — email hello@banking2day.com or call during support hours. Would you like the Contact page?";
+    if (has("hi", "hello", "hey", "thanks", "thank")) return "Happy to help! Ask me about loans, EMI, credit score, cards, prepayment or banking safety.";
+    return "I can help with loans, EMI calculations, eligibility, credit score, credit cards, prepayment, investments (FD/NPS/GST) and banking safety. Which would you like to know about?";
+  }
+
+  pushChat(from, text){
+    this.setState((s) => ({ messages: [...s.messages, { from, text }] }));
+    setTimeout(() => { try { const el = this._chatScroll; if (el) el.scrollTop = el.scrollHeight; } catch(_){} }, 30);
+  }
+
+  ask(text){
+    if (!text || !text.trim()) return;
+    if (!this.state.firstQuestion) this.setState({ firstQuestion: text.trim() });
+    this.pushChat("user", text.trim());
+    const reply = this.botReply(text);
+    setTimeout(() => {
+      this.pushChat("bot", reply);
+      if (!this.state.leadOffered && !this.state.leadSent) {
+        setTimeout(() => {
+          this.pushChat("bot", "Would you like our team to call you with full details? Share your name and number below 👇");
+          this.setState({ leadOffered: true });
+        }, 500);
+      }
+    }, 380);
+  }
+
+  saveChatLead(name, phone){
+    const rec = { name: name.trim(), phone: phone, product: this.state.firstQuestion ? ("Chat: " + this.state.firstQuestion).slice(0, 120) : "Chat enquiry", status: "New", consent: true, created_at: new Date().toISOString() };
+    if (window.B2D && window.B2D.configured && window.B2D.submitLead) {
+      window.B2D.submitLead(rec).catch(() => {});
+    } else {
+      try { const k = "b2d_leads"; const l = JSON.parse(localStorage.getItem(k) || "[]"); l.unshift(rec); localStorage.setItem(k, JSON.stringify(l)); } catch(_){}
+    }
+  }
+
+  fmtINR(n){
+    n = Math.round(Number(n) || 0);
+    let s = String(n);
+    let last3 = s.slice(-3);
+    let rest = s.slice(0, -3);
+    if (rest) { last3 = ',' + last3; rest = rest.replace(/\B(?=(\d{2})+(?!\d))/g, ','); }
+    return '₹' + rest + last3;
+  }
+
+  emiValue(){
+    const P = this.state.loan;
+    const r = (this.props.ratePct ?? 10.5) / 12 / 100;
+    const n = this.state.tenure;
+    if (r === 0) return P / n;
+    const f = Math.pow(1 + r, n);
+    return P * r * f / (f - 1);
+  }
+
+  renderVals(){
+    const max = this.props.loanMax ?? 1000000;
+    const min = this.props.loanMin ?? 50000;
+    const pct = ((this.state.loan - min) / (max - min)) * 100;
+    const emi = this.emiValue();
+    const total = emi * this.state.tenure;
+    return {
+      rates: [
+        { initials: "LP1", provider: "Loan Provider 01", highlight: "Quick digital process", rate: "10.49% p.a.", tag: "Lowest shown", tagColor: "#0A6450", tagBg: "#E7F5F3" },
+        { initials: "LP2", provider: "Loan Provider 02", highlight: "Flexible repayment", rate: "10.80% p.a.", tag: "Popular", tagColor: "#1F5E8C", tagBg: "#E8EFF7" },
+        { initials: "LP3", provider: "Loan Provider 03", highlight: "Minimal documentation", rate: "10.99% p.a.", tag: "Fast KYC", tagColor: "#1F5E8C", tagBg: "#E8EFF7" },
+        { initials: "LP4", provider: "Loan Provider 04", highlight: "Broad eligibility", rate: "11.99% p.a.", tag: "In review", tagColor: "#B47B12", tagBg: "#FFF6E0" },
+      ],
+      loanMin: min,
+      loanMax: max,
+      loanVal: this.state.loan,
+      loanFmt: this.fmtINR(this.state.loan),
+      sliderPct: pct.toFixed(1),
+      emiFmt: this.fmtINR(emi),
+      totalFmt: this.fmtINR(total),
+      subscribed: this.state.subscribed,
+      notSubscribed: !this.state.subscribed,
+      email: this.state.email,
+      chatOpen: this.state.chatOpen,
+      chatInput: this.state.chatInput,
+      chatScrollRef: (el) => { this._chatScroll = el; },
+      messages: this.state.messages.map((m) => ({
+        text: m.text,
+        align: m.from === "user" ? "flex-end" : "flex-start",
+        bg: m.from === "user" ? "var(--teal)" : "#fff",
+        color: m.from === "user" ? "#fff" : "var(--ink)",
+        border: m.from === "user" ? "none" : "1px solid var(--line)",
+      })),
+      quickReplies: [
+        { label: "Personal loan", action: () => this.ask("Personal loan") },
+        { label: "Calculate EMI", action: () => this.ask("How do I calculate EMI?") },
+        { label: "Credit score", action: () => this.ask("Credit score") },
+        { label: "Credit cards", action: () => this.ask("Credit cards") },
+        { label: "Is it free?", action: () => this.ask("Is it free?") },
+      ],
+      leadFormVisible: this.state.leadOffered && !this.state.leadSent,
+      leadName: this.state.leadName,
+      leadPhone: this.state.leadPhone,
+      onLeadName: (e) => this.setState({ leadName: e.target.value }),
+      onLeadPhone: (e) => this.setState({ leadPhone: e.target.value.replace(/[^\d]/g, "").slice(0, 10) }),
+      submitLead: (e) => {
+        e.preventDefault();
+        if (!this.state.leadName.trim() || this.state.leadPhone.length !== 10) { this.pushChat("bot", "Please enter your name and a valid 10-digit mobile number."); return; }
+        this.saveChatLead(this.state.leadName, this.state.leadPhone);
+        const nm = this.state.leadName.trim();
+        this.setState({ leadSent: true });
+        this.pushChat("bot", "Thanks " + nm + "! Our team will call you shortly on " + this.state.leadPhone + ". Anything else I can help with?");
+      },
+      onChatInput: (e) => this.setState({ chatInput: e.target.value }),
+      sendMsg: (e) => { e.preventDefault(); const t = this.state.chatInput; this.setState({ chatInput: "" }); this.ask(t); },
+      chatVisible: !this.state.chatHidden,
+      hideChat: (e) => { if (e) e.stopPropagation(); this.setState({ chatHidden: true, chatOpen: false }); },
+      onLoan: (e) => this.setState({ loan: Number(e.target.value) }),
+      onEmail: (e) => this.setState({ email: e.target.value }),
+      onSubscribe: (e) => { e.preventDefault(); if (this.state.email.trim()) this.setState({ subscribed: true }); },
+      toggleChat: () => this.setState((s) => ({ chatOpen: !s.chatOpen })),
+      setTenure: (e) => {
+        const btn = e.currentTarget;
+        const t = Number(btn.getAttribute('data-t'));
+        const group = btn.parentElement;
+        Array.from(group.children).forEach((c) => {
+          c.style.background = '#fff';
+          c.style.color = 'var(--ink)';
+          c.style.borderColor = 'var(--line)';
+        });
+        btn.style.background = 'var(--teal)';
+        btn.style.color = '#fff';
+        btn.style.borderColor = 'var(--teal)';
+        this.setState({ tenure: t });
+      },
+      toggleFaq: (e) => {
+        const btn = e.currentTarget;
+        const ans = btn.nextElementSibling;
+        const open = ans.getAttribute('data-open') === '1';
+        ans.setAttribute('data-open', open ? '0' : '1');
+        ans.style.maxHeight = open ? '0px' : ans.scrollHeight + 'px';
+        const chev = btn.querySelector('[data-chev]');
+        if (chev) chev.style.transform = open ? 'rotate(0deg)' : 'rotate(180deg)';
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

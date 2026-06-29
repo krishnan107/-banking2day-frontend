@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#fff}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:7px;border-radius:999px;background:transparent;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:7px;border-radius:999px;background:linear-gradient(90deg,#0E7C66 0 var(--pct,50%),#E3ECF2 var(--pct,50%) 100%)}
+input[type=range]::-moz-range-track{height:7px;border-radius:999px;background:#E3ECF2}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;margin-top:-7px;width:21px;height:21px;border-radius:50%;background:#0E7C66;border:4px solid #fff;box-shadow:0 0 0 1px #CFE0DA,0 4px 10px rgba(14,124,102,.45)}
+input[type=range]::-moz-range-thumb{width:21px;height:21px;border:4px solid #fff;border-radius:50%;background:#0E7C66;box-shadow:0 0 0 1px #CFE0DA,0 4px 10px rgba(14,124,102,.45)}
+@media(max-width:900px){[data-r=calc]{grid-template-columns:1fr!important}[data-r=rt]{grid-template-columns:1fr!important}[data-r=g3e]{grid-template-columns:1fr!important}[data-r=navlinks]{display:none!important}[data-r=h1]{font-size:30px!important}[data-r=notch]{display:none!important}}
+</style>
+</helmet>
+<div style="--navy:#0B3B60;--navy-d:#082B47;--teal:#0E7C66;--teal-d:#0A6450;--amber:#F4B942;--amber-l:#FFF6E0;--ink:#17223B;--muted:#526171;--line:#DCE5EC;--surface:#F4F7FA;--mint:#E7F5F3;--mint-2:#F2FAF7;--tint:#EEF4FA;font-family:'DM Sans',sans-serif;color:#17223B;background:#fff;overflow-x:hidden">
+
+  <!-- HEADER -->
+  <header style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)">
+    <div style="max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:32px">
+      <a href="Banking2Day.dc.html" style="display:flex;align-items:center"><img src="uploads/banking2day-logo.png" alt="Banking2Day" style="height:36px;width:auto"/></a>
+      <nav data-r="navlinks" style="display:flex;gap:24px;margin-left:8px;font-weight:600;font-size:15px;color:#2B3A4B">
+        <a href="Banking2Day.dc.html#loans" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Loans</a>
+        <a href="Banking2Day.dc.html#cards" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Credit Cards</a>
+        <a href="Banking2Day.dc.html#how" style="text-decoration:none;color:var(--teal)">Calculators</a>
+        <a href="Banking2Day.dc.html#learn" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Learn</a>
+      </nav>
+      <a href="Banking2Day Loan Apply.dc.html" style="margin-left:auto;text-decoration:none;background:var(--teal);color:#fff;font-weight:700;font-size:15px;padding:11px 20px;border-radius:8px;box-shadow:0 8px 18px rgba(14,124,102,.22)" style-hover="background:var(--teal-d)">Check eligibility</a>
+    </div>
+  </header>
+
+  <!-- HERO + CALCULATOR -->
+  <section style="background:linear-gradient(180deg,#EEF4F9 0%,#ffffff 90%)">
+    <div style="max-width:1180px;margin:0 auto;padding:34px 24px 56px">
+      <div style="font-size:13px;color:var(--muted);font-weight:600;display:flex;gap:8px;align-items:center"><a href="Banking2Day.dc.html" style="color:var(--muted);text-decoration:none" style-hover="color:var(--teal)">Home</a><span>/</span><a href="Banking2Day.dc.html#how" style="color:var(--muted);text-decoration:none" style-hover="color:var(--teal)">Calculators</a><span>/</span><span style="color:var(--ink)">Home Loan Prepayment</span></div>
+      <h1 data-r="h1" style="font-family:'Manrope';font-weight:800;font-size:38px;letter-spacing:-.7px;color:var(--navy);margin:16px 0 0">Home Loan Prepayment Calculator</h1>
+      <p style="font-size:17px;color:var(--muted);margin:10px 0 0;max-width:660px;line-height:1.6">See how a lump-sum prepayment cuts your home loan. Enter your outstanding balance, rate, remaining tenure and the amount you want to prepay to find your interest saved and reduced tenure.</p>
+
+      <!-- CALCULATOR -->
+      <div data-r="calc" style="position:relative;display:grid;grid-template-columns:1.32fr .88fr;gap:26px;margin-top:28px;align-items:start">
+
+        <!-- LEFT: INPUTS -->
+        <div style="background:linear-gradient(150deg,#EDF3FA 0%,#F4F8FC 100%);border:1px solid #DDE8F2;border-radius:24px;padding:28px;box-shadow:0 18px 44px rgba(11,59,96,.07)">
+          <div style="font-family:'Manrope';font-weight:800;font-size:21px;color:var(--navy)">Calculate your prepayment savings</div>
+
+          <!-- outstanding -->
+          <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:20px">
+            <div style="font-weight:600;font-size:14px;color:var(--muted)">Outstanding loan amount</div>
+            <div style="display:flex;align-items:center;gap:4px;border-bottom:2px solid var(--line);padding:8px 0 10px;margin-top:14px"><span style="font-family:'Manrope';font-weight:800;font-size:26px;color:var(--ink)">₹</span><input inputmode="numeric" value="{{ amountStr }}" oninput="{{ onAmountText }}" style="border:none;background:none;outline:none;font-family:'Manrope';font-weight:800;font-size:26px;color:var(--ink);width:100%"/></div>
+            <input type="range" min="50000" max="50000000" step="50000" value="{{ amount }}" oninput="{{ onAmount }}" style="--pct:{{ amtPct }}%;margin-top:18px">
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-weight:600;margin-top:9px"><span>₹50K</span><span>₹5Cr</span></div>
+          </div>
+
+          <!-- prepayment -->
+          <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:16px">
+            <div style="font-weight:600;font-size:14px;color:var(--muted)">Prepayment amount (lump sum)</div>
+            <div style="display:flex;align-items:center;gap:4px;border-bottom:2px solid var(--line);padding:8px 0 10px;margin-top:14px"><span style="font-family:'Manrope';font-weight:800;font-size:26px;color:var(--ink)">₹</span><input inputmode="numeric" value="{{ prepayStr }}" oninput="{{ onPrepayText }}" style="border:none;background:none;outline:none;font-family:'Manrope';font-weight:800;font-size:26px;color:var(--ink);width:100%"/></div>
+            <input type="range" min="0" max="{{ amount }}" step="10000" value="{{ prepay }}" oninput="{{ onPrepay }}" style="--pct:{{ ppPct }}%;margin-top:18px">
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-weight:600;margin-top:9px"><span>₹0</span><span>{{ amountStr }}</span></div>
+          </div>
+
+          <!-- rate + tenure -->
+          <div data-r="rt" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
+            <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px">
+              <div style="font-weight:600;font-size:14px;color:var(--muted)">Interest rate <span style="font-size:12px">(yearly %)</span></div>
+              <div style="border-bottom:2px solid var(--line);padding:8px 0 10px;margin-top:14px"><input inputmode="decimal" value="{{ rateStr }}" oninput="{{ onRateText }}" style="border:none;background:none;outline:none;font-family:'Manrope';font-weight:800;font-size:26px;color:var(--ink);width:100%"/></div>
+              <input type="range" min="8" max="30" step="0.1" value="{{ rate }}" oninput="{{ onRate }}" style="--pct:{{ ratePct }}%;margin-top:18px">
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-weight:600;margin-top:9px"><span>8%</span><span>30%</span></div>
+            </div>
+            <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px">
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="font-weight:600;font-size:14px;color:var(--muted)">Remaining tenure</span>
+                <div style="display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;padding:2px;background:var(--surface)">
+                  <button onClick="{{ setUnitMo }}" style="cursor:pointer;border:none;border-radius:999px;font-family:'DM Sans';font-weight:700;font-size:12.5px;padding:5px 12px;background:{{ moBg }};color:{{ moColor }}">Mo</button>
+                  <button onClick="{{ setUnitYr }}" style="cursor:pointer;border:none;border-radius:999px;font-family:'DM Sans';font-weight:700;font-size:12.5px;padding:5px 12px;background:{{ yrBg }};color:{{ yrColor }}">Yr</button>
+                </div>
+              </div>
+              <div style="border-bottom:2px solid var(--line);padding:8px 0 10px;margin-top:14px"><span style="font-family:'Manrope';font-weight:800;font-size:26px;color:var(--ink)">{{ tenureNum }}</span><span style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--muted);margin-left:6px">{{ tenureUnitLabel }}</span></div>
+              <input type="range" min="12" max="360" step="{{ tenStep }}" value="{{ months }}" oninput="{{ onTenure }}" style="--pct:{{ tenPct }}%;margin-top:18px">
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-weight:600;margin-top:9px"><span>1Y</span><span>30Y</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: RESULT -->
+        <div style="position:relative;display:flex;flex-direction:column;background:linear-gradient(150deg,#EDF3FA 0%,#F4F8FC 100%);border:1px solid #DDE8F2;border-radius:24px;padding:16px;box-shadow:0 18px 44px rgba(11,59,96,.07)">
+          <div data-r="notch" style="position:absolute;left:-32px;top:64px;width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;box-shadow:-5px 0 14px rgba(11,59,96,.08)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#0E7C66" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div style="background:linear-gradient(160deg,#0B3B60,#0E5A52);border-radius:18px;padding:26px 24px;text-align:center;box-shadow:0 14px 28px rgba(11,59,96,.2)">
+            <div style="font-family:'Manrope';font-weight:700;font-size:13px;letter-spacing:1px;color:#9FD8C7">INTEREST YOU COULD SAVE</div>
+            <div style="font-family:'Manrope';font-weight:800;font-size:44px;color:#fff;line-height:1.1;margin-top:6px">{{ savedStr }}</div>
+          </div>
+          <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;margin-top:12px">
+            <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">New tenure</span><span style="font-family:'Manrope';font-weight:700;font-size:16px;color:var(--ink)">{{ newTenureStr }}</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px"><span style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">Tenure reduced by</span><span style="font-family:'Manrope';font-weight:700;font-size:16px;color:#B47B12">{{ reducedStr }}</span></div>
+            <div style="border-top:1px dashed var(--line);margin:18px 0"></div>
+            <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:'Manrope';font-weight:800;font-size:16px;color:var(--navy)">EMI unchanged</span><span style="font-family:'Manrope';font-weight:800;font-size:17px;color:var(--navy)">{{ emiStr }}</span></div>
+          </div>
+          <a href="Banking2Day Loan Apply.dc.html" style="display:block;text-align:center;text-decoration:none;background:var(--teal);color:#fff;font-family:'Manrope';font-weight:800;font-size:16px;padding:16px;border-radius:14px;margin-top:14px;box-shadow:0 14px 28px rgba(14,124,102,.28)" style-hover="background:var(--teal-d)">Explore loan options →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section style="max-width:980px;margin:0 auto;padding:56px 24px 0">
+    <div style="color:var(--teal-d);font-weight:700;font-size:12px;letter-spacing:1.5px">UNDERSTAND PREPAYMENT</div>
+    <h2 style="font-family:'Manrope';font-weight:800;font-size:30px;letter-spacing:-.5px;color:var(--navy);margin:8px 0 0">How does loan prepayment save you money?</h2>
+    <p style="font-size:16px;color:var(--muted);line-height:1.7;margin:14px 0 0">A <strong style="color:var(--ink)">prepayment</strong> is an extra lump-sum payment toward your loan's principal, over and above your regular EMIs. Because personal loans use reducing-balance interest, cutting the principal early means interest is charged on a smaller balance — so you either finish the loan sooner or pay less interest overall. This tool keeps your EMI the same and shows how much sooner the loan ends.</p>
+
+    <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;margin-top:24px">
+      <div style="font-family:'Manrope';font-weight:800;font-size:16px;color:var(--navy)">How the estimate works</div>
+      <div style="font-size:14.5px;color:var(--muted);line-height:1.8;margin-top:10px">1. Your prepayment is subtracted from the outstanding principal<br>2. Keeping the same EMI, the loan now clears in fewer months — the interest you avoid on that reduced balance is your saving</div>
+    </div>
+
+    <h2 style="font-family:'Manrope';font-weight:800;font-size:24px;color:var(--navy);margin:44px 0 0">What affects your savings?</h2>
+    <div data-r="g3e" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px">
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px"><div style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">Prepayment size</div><p style="font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.55">A larger lump sum cuts more principal and saves more interest.</p></div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px"><div style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">Timing</div><p style="font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.55">Prepaying earlier in the tenure saves far more than prepaying near the end.</p></div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px"><div style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">Interest rate</div><p style="font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.55">The higher your rate, the more each prepayment is worth in saved interest.</p></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="max-width:820px;margin:0 auto;padding:56px 24px 0">
+    <h2 style="font-family:'Manrope';font-weight:800;font-size:28px;color:var(--navy);text-align:center">Frequently asked questions</h2>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-top:28px">
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden">
+        <button onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:none;cursor:pointer;padding:18px 20px;text-align:left;font-family:'DM Sans';font-weight:700;font-size:15.5px;color:var(--ink)">Will prepaying reduce my EMI or my tenure?<span data-chev style="color:var(--teal);transition:transform .2s">▾</span></button>
+        <div data-open="0" style="max-height:0;overflow:hidden;transition:max-height .25s ease"><p style="padding:0 20px 18px;color:var(--muted);font-size:14.5px;line-height:1.6">This calculator keeps your EMI the same and reduces the tenure, which maximises interest saved. Many lenders also let you keep the tenure and lower the EMI instead — ask your lender which options they allow.</p></div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden">
+        <button onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:none;cursor:pointer;padding:18px 20px;text-align:left;font-family:'DM Sans';font-weight:700;font-size:15.5px;color:var(--ink)">Are there charges for prepaying a personal loan?<span data-chev style="color:var(--teal);transition:transform .2s">▾</span></button>
+        <div data-open="0" style="max-height:0;overflow:hidden;transition:max-height .25s ease"><p style="padding:0 20px 18px;color:var(--muted);font-size:14.5px;line-height:1.6">Some lenders charge a prepayment or foreclosure fee (often a percentage of the amount prepaid), while others allow it free after a lock-in period. Check your loan agreement before prepaying.</p></div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden">
+        <button onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:none;cursor:pointer;padding:18px 20px;text-align:left;font-family:'DM Sans';font-weight:700;font-size:15.5px;color:var(--ink)">When is prepayment most worthwhile?<span data-chev style="color:var(--teal);transition:transform .2s">▾</span></button>
+        <div data-open="0" style="max-height:0;overflow:hidden;transition:max-height .25s ease"><p style="padding:0 20px 18px;color:var(--muted);font-size:14.5px;line-height:1.6">Earlier in the tenure, when most of your EMI still goes toward interest. Prepaying in the first half of the loan typically saves significantly more than prepaying near the end.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="max-width:1100px;margin:0 auto;padding:56px 24px">
+    <div style="background:linear-gradient(135deg,var(--navy),var(--teal));border-radius:24px;padding:48px;text-align:center;color:#fff">
+      <h2 style="font-family:'Manrope';font-weight:800;font-size:30px;letter-spacing:-.5px">Ready to clear your loan faster?</h2>
+      <p style="font-size:16px;opacity:.9;margin:10px 0 0">Check your eligibility in under two minutes — it won't affect your credit score.</p>
+      <a href="Banking2Day Loan Apply.dc.html" style="display:inline-block;text-decoration:none;background:#fff;color:var(--navy);font-weight:700;font-size:16px;padding:14px 30px;border-radius:12px;margin-top:24px" style-hover="filter:brightness(.96)">Check loan eligibility</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--navy-d);color:#9FB3C4">
+    <div style="max-width:1100px;margin:0 auto;padding:30px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:12.5px">
+      <span>Banking2Day is an information and comparison platform, not a bank, NBFC or financial adviser. Eligibility figures are indicative.</span>
+      <a href="Banking2Day.dc.html" style="color:#fff;text-decoration:none;font-weight:600" style-hover="opacity:.8">← Back to Banking2Day</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:760}}">
+class Component extends DCLogic {
+  state = { amount: 5000000, rate: 8.5, months: 240, unit: "Yr", prepay: 1000000 };
+
+  fmtINR(n){
+    n = Math.round(Number(n) || 0);
+    const neg = n < 0; n = Math.abs(n);
+    let s = String(n), last3 = s.slice(-3), rest = s.slice(0, -3);
+    if (rest) { last3 = ',' + last3; rest = rest.replace(/\B(?=(\d{2})+(?!\d))/g, ','); }
+    return (neg ? '-' : '') + '₹' + rest + last3;
+  }
+
+  monthsToStr(m){
+    m = Math.max(0, Math.round(m));
+    const y = Math.floor(m / 12), mo = m % 12;
+    if (y && mo) return y + (y === 1 ? " yr " : " yrs ") + mo + " mo";
+    if (y) return y + (y === 1 ? " yr" : " yrs");
+    return mo + " mo";
+  }
+
+  renderVals(){
+    const r = this.state.rate / 12 / 100, n = this.state.months;
+    const P = this.state.amount;
+    const prepay = Math.min(this.state.prepay, P);
+    const emi = r === 0 ? P / n : P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+    const origInterest = emi * n - P;
+    const newBal = Math.max(P - prepay, 0);
+    let newMonthsExact = 0, newInterest = 0;
+    if (newBal > 0){
+      if (r === 0){ newMonthsExact = newBal / emi; }
+      else if (emi > newBal * r){ newMonthsExact = Math.log(emi / (emi - newBal * r)) / Math.log(1 + r); }
+      else { newMonthsExact = n; }
+      newInterest = emi * newMonthsExact - newBal;
+    }
+    const saved = Math.max(origInterest - newInterest, 0);
+    const newMonths = Math.ceil(newMonthsExact);
+    const monthsReduced = Math.max(n - newMonths, 0);
+    const isYr = this.state.unit === "Yr";
+    return {
+      amount: P, amountStr: P.toLocaleString('en-IN'),
+      amtPct: (((P - 50000) / (50000000 - 50000)) * 100).toFixed(1),
+      prepay, prepayStr: prepay.toLocaleString('en-IN'),
+      ppPct: (P > 0 ? (prepay / P) * 100 : 0).toFixed(1),
+      rate: this.state.rate, rateStr: (Math.round(this.state.rate * 10) / 10).toString(),
+      ratePct: (((this.state.rate - 8) / 22) * 100).toFixed(1),
+      months: this.state.months,
+      tenStep: isYr ? 12 : 1,
+      tenPct: (((this.state.months - 12) / 348) * 100).toFixed(1),
+      tenureNum: isYr ? (this.state.months / 12) : this.state.months,
+      tenureUnitLabel: isYr ? (this.state.months === 12 ? "Year" : "Years") : "Months",
+      yrBg: isYr ? "var(--teal)" : "transparent", yrColor: isYr ? "#fff" : "var(--muted)",
+      moBg: !isYr ? "var(--teal)" : "transparent", moColor: !isYr ? "#fff" : "var(--muted)",
+      savedStr: this.fmtINR(saved),
+      newTenureStr: this.monthsToStr(newMonths),
+      reducedStr: this.monthsToStr(monthsReduced),
+      emiStr: this.fmtINR(emi),
+      onAmount: (e) => this.setState({ amount: Number(e.target.value), prepay: Math.min(this.state.prepay, Number(e.target.value)) }),
+      onAmountText: (e) => { let v = Number(String(e.target.value).replace(/[^\d]/g, "")) || 0; v = Math.max(50000, Math.min(50000000, v)); this.setState({ amount: v, prepay: Math.min(this.state.prepay, v) }); },
+      onPrepay: (e) => this.setState({ prepay: Number(e.target.value) }),
+      onPrepayText: (e) => { let v = Number(String(e.target.value).replace(/[^\d]/g, "")) || 0; this.setState({ prepay: Math.max(0, Math.min(this.state.amount, v)) }); },
+      onRate: (e) => this.setState({ rate: Number(e.target.value) }),
+      onRateText: (e) => { let v = parseFloat(String(e.target.value).replace(/[^\d.]/g, "")) || 0; this.setState({ rate: Math.max(8, Math.min(30, v)) }); },
+      onTenure: (e) => this.setState({ months: Number(e.target.value) }),
+      setUnitYr: () => this.setState({ unit: "Yr", months: Math.round(this.state.months / 12) * 12 || 12 }),
+      setUnitMo: () => this.setState({ unit: "Mo" }),
+      toggleFaq: (e) => {
+        const btn = e.currentTarget, ans = btn.nextElementSibling;
+        const open = ans.getAttribute('data-open') === '1';
+        ans.setAttribute('data-open', open ? '0' : '1');
+        ans.style.maxHeight = open ? '0px' : ans.scrollHeight + 'px';
+        const chev = btn.querySelector('[data-chev]');
+        if (chev) chev.style.transform = open ? 'rotate(0deg)' : 'rotate(180deg)';
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

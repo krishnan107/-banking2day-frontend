@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#fff}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:7px;border-radius:999px;background:transparent;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:7px;border-radius:999px;background:linear-gradient(90deg,#0E7C66 0 var(--pct,50%),#E3ECF2 var(--pct,50%) 100%)}
+input[type=range]::-moz-range-track{height:7px;border-radius:999px;background:#E3ECF2}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;margin-top:-7px;width:21px;height:21px;border-radius:50%;background:#0E7C66;border:4px solid #fff;box-shadow:0 0 0 1px #CFE0DA,0 4px 10px rgba(14,124,102,.45)}
+input[type=range]::-moz-range-thumb{width:21px;height:21px;border:4px solid #fff;border-radius:50%;background:#0E7C66;box-shadow:0 0 0 1px #CFE0DA,0 4px 10px rgba(14,124,102,.45)}
+@media(max-width:900px){[data-r=calc]{grid-template-columns:1fr!important}[data-r=g3e]{grid-template-columns:1fr!important}[data-r=navlinks]{display:none!important}[data-r=h1]{font-size:30px!important}[data-r=notch]{display:none!important}}
+</style>
+</helmet>
+<div style="--navy:#0B3B60;--navy-d:#082B47;--teal:#0E7C66;--teal-d:#0A6450;--amber:#F4B942;--amber-l:#FFF6E0;--ink:#17223B;--muted:#526171;--line:#DCE5EC;--surface:#F4F7FA;--mint:#E7F5F3;--mint-2:#F2FAF7;--tint:#EEF4FA;font-family:'DM Sans',sans-serif;color:#17223B;background:#fff;overflow-x:hidden">
+
+  <!-- HEADER -->
+  <header style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)">
+    <div style="max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:32px">
+      <a href="Banking2Day.dc.html" style="display:flex;align-items:center"><img src="uploads/banking2day-logo.png" alt="Banking2Day" style="height:36px;width:auto"/></a>
+      <nav data-r="navlinks" style="display:flex;gap:24px;margin-left:8px;font-weight:600;font-size:15px;color:#2B3A4B">
+        <a href="Banking2Day.dc.html#loans" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Loans</a>
+        <a href="Banking2Day.dc.html#cards" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Credit Cards</a>
+        <a href="Banking2Day.dc.html#how" style="text-decoration:none;color:var(--teal)">Calculators</a>
+        <a href="Banking2Day.dc.html#learn" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Learn</a>
+      </nav>
+      <a href="Banking2Day Loan Apply.dc.html" style="margin-left:auto;text-decoration:none;background:var(--teal);color:#fff;font-weight:700;font-size:15px;padding:11px 20px;border-radius:8px;box-shadow:0 8px 18px rgba(14,124,102,.22)" style-hover="background:var(--teal-d)">Check eligibility</a>
+    </div>
+  </header>
+
+  <!-- HERO + CALCULATOR -->
+  <section style="background:linear-gradient(180deg,#EEF4F9 0%,#ffffff 90%)">
+    <div style="max-width:1180px;margin:0 auto;padding:34px 24px 56px">
+      <div style="font-size:13px;color:var(--muted);font-weight:600;display:flex;gap:8px;align-items:center"><a href="Banking2Day.dc.html" style="color:var(--muted);text-decoration:none" style-hover="color:var(--teal)">Home</a><span>/</span><a href="Banking2Day.dc.html#how" style="color:var(--muted);text-decoration:none" style-hover="color:var(--teal)">Calculators</a><span>/</span><span style="color:var(--ink)">GST</span></div>
+      <h1 data-r="h1" style="font-family:'Manrope';font-weight:800;font-size:38px;letter-spacing:-.7px;color:var(--navy);margin:16px 0 0">GST Calculator</h1>
+      <p style="font-size:17px;color:var(--muted);margin:10px 0 0;max-width:660px;line-height:1.6">Work out GST in seconds. Enter an amount, pick the GST slab and choose whether to add GST to a base price or extract it from a GST-inclusive total.</p>
+
+      <!-- CALCULATOR -->
+      <div data-r="calc" style="position:relative;display:grid;grid-template-columns:1.32fr .88fr;gap:26px;margin-top:28px;align-items:start">
+
+        <!-- LEFT: INPUTS -->
+        <div style="background:linear-gradient(150deg,#EDF3FA 0%,#F4F8FC 100%);border:1px solid #DDE8F2;border-radius:24px;padding:28px;box-shadow:0 18px 44px rgba(11,59,96,.07)">
+          <div style="font-family:'Manrope';font-weight:800;font-size:21px;color:var(--navy)">Calculate GST</div>
+
+          <!-- mode -->
+          <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:20px">
+            <div style="font-weight:600;font-size:14px;color:var(--muted)">Calculation type</div>
+            <div style="display:flex;gap:10px;margin-top:12px">
+              <button onClick="{{ setAdd }}" style="flex:1;cursor:pointer;font-family:'DM Sans';font-weight:700;font-size:14px;padding:12px;border-radius:11px;border:1.5px solid {{ addBorder }};background:{{ addBg }};color:{{ addColor }}">Add GST</button>
+              <button onClick="{{ setRemove }}" style="flex:1;cursor:pointer;font-family:'DM Sans';font-weight:700;font-size:14px;padding:12px;border-radius:11px;border:1.5px solid {{ remBorder }};background:{{ remBg }};color:{{ remColor }}">Remove GST</button>
+            </div>
+            <div style="font-size:12.5px;color:var(--muted);margin-top:10px;line-height:1.5">{{ modeHint }}</div>
+          </div>
+
+          <!-- amount -->
+          <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:16px">
+            <div style="font-weight:600;font-size:14px;color:var(--muted)">{{ amountLabel }}</div>
+            <div style="display:flex;align-items:center;gap:4px;border-bottom:2px solid var(--line);padding:8px 0 10px;margin-top:14px"><span style="font-family:'Manrope';font-weight:800;font-size:26px;color:var(--ink)">₹</span><input inputmode="numeric" value="{{ amountStr }}" oninput="{{ onAmountText }}" style="border:none;background:none;outline:none;font-family:'Manrope';font-weight:800;font-size:26px;color:var(--ink);width:100%"/></div>
+            <input type="range" min="100" max="1000000" step="100" value="{{ amount }}" oninput="{{ onAmount }}" style="--pct:{{ amtPct }}%;margin-top:18px">
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-weight:600;margin-top:9px"><span>₹100</span><span>₹10L</span></div>
+          </div>
+
+          <!-- rate chips -->
+          <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:16px">
+            <div style="font-weight:600;font-size:14px;color:var(--muted)">GST rate</div>
+            <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+              <sc-for list="{{ rates }}" as="rt" hint-placeholder-count="5">
+                <button onClick="{{ setRate }}" data-rate="{{ rt.val }}" style="flex:1;min-width:60px;cursor:pointer;font-family:'Manrope';font-weight:800;font-size:15px;padding:12px 0;border-radius:11px;border:1.5px solid {{ rt.border }};background:{{ rt.bg }};color:{{ rt.color }}">{{ rt.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: RESULT -->
+        <div style="position:relative;display:flex;flex-direction:column;background:linear-gradient(150deg,#EDF3FA 0%,#F4F8FC 100%);border:1px solid #DDE8F2;border-radius:24px;padding:16px;box-shadow:0 18px 44px rgba(11,59,96,.07)">
+          <div data-r="notch" style="position:absolute;left:-32px;top:64px;width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;box-shadow:-5px 0 14px rgba(11,59,96,.08)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#0E7C66" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div style="background:linear-gradient(160deg,#0B3B60,#0E5A52);border-radius:18px;padding:26px 24px;text-align:center;box-shadow:0 14px 28px rgba(11,59,96,.2)">
+            <div style="font-family:'Manrope';font-weight:700;font-size:13px;letter-spacing:1px;color:#9FD8C7">TOTAL GST ({{ rateStr }}%)</div>
+            <div style="font-family:'Manrope';font-weight:800;font-size:44px;color:#fff;line-height:1.1;margin-top:6px">{{ gstStr }}</div>
+          </div>
+          <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;margin-top:12px">
+            <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">Base amount</span><span style="font-family:'Manrope';font-weight:700;font-size:16px;color:var(--ink)">{{ baseStr }}</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px"><span style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">CGST ({{ halfRateStr }}%)</span><span style="font-family:'Manrope';font-weight:700;font-size:16px;color:#B47B12">{{ halfStr }}</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px"><span style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">SGST ({{ halfRateStr }}%)</span><span style="font-family:'Manrope';font-weight:700;font-size:16px;color:#B47B12">{{ halfStr }}</span></div>
+            <div style="border-top:1px dashed var(--line);margin:18px 0"></div>
+            <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:'Manrope';font-weight:800;font-size:18px;color:var(--navy)">Total amount</span><span style="font-family:'Manrope';font-weight:800;font-size:19px;color:var(--navy)">{{ totalStr }}</span></div>
+          </div>
+          <a href="Banking2Day.dc.html" style="display:block;text-align:center;text-decoration:none;background:var(--teal);color:#fff;font-family:'Manrope';font-weight:800;font-size:16px;padding:16px;border-radius:14px;margin-top:14px;box-shadow:0 14px 28px rgba(14,124,102,.28)" style-hover="background:var(--teal-d)">Explore Banking2Day →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section style="max-width:980px;margin:0 auto;padding:56px 24px 0">
+    <div style="color:var(--teal-d);font-weight:700;font-size:12px;letter-spacing:1.5px">UNDERSTAND GST</div>
+    <h2 style="font-family:'Manrope';font-weight:800;font-size:30px;letter-spacing:-.5px;color:var(--navy);margin:8px 0 0">What is GST?</h2>
+    <p style="font-size:16px;color:var(--muted);line-height:1.7;margin:14px 0 0"><strong style="color:var(--ink)">Goods and Services Tax (GST)</strong> is an indirect tax levied on the supply of goods and services in India. It replaced many earlier taxes with a single system. For transactions within a state, GST is split equally into <strong style="color:var(--ink)">CGST</strong> (central) and <strong style="color:var(--ink)">SGST</strong> (state); for inter-state supply it is charged as a single <strong style="color:var(--ink)">IGST</strong>.</p>
+
+    <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;margin-top:24px">
+      <div style="font-family:'Manrope';font-weight:800;font-size:16px;color:var(--navy)">How GST is calculated</div>
+      <div style="font-size:14.5px;color:var(--muted);line-height:1.8;margin-top:10px"><strong style="color:var(--ink)">Add GST:</strong> GST = base × rate% &nbsp; · &nbsp; total = base + GST<br><strong style="color:var(--ink)">Remove GST:</strong> base = total ÷ (1 + rate%) &nbsp; · &nbsp; GST = total − base</div>
+    </div>
+
+    <h2 style="font-family:'Manrope';font-weight:800;font-size:24px;color:var(--navy);margin:44px 0 0">GST rate slabs</h2>
+    <div data-r="g3e" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px">
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px"><div style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">5%</div><p style="font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.55">Essentials such as packaged food, footwear and economy transport.</p></div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px"><div style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">12% &amp; 18%</div><p style="font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.55">Standard goods and most services fall into these two slabs.</p></div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px"><div style="font-family:'Manrope';font-weight:700;font-size:15px;color:var(--ink)">28%</div><p style="font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.55">Luxury and sin goods such as premium cars and aerated drinks.</p></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="max-width:820px;margin:0 auto;padding:56px 24px 0">
+    <h2 style="font-family:'Manrope';font-weight:800;font-size:28px;color:var(--navy);text-align:center">Frequently asked questions</h2>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-top:28px">
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden">
+        <button onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:none;cursor:pointer;padding:18px 20px;text-align:left;font-family:'DM Sans';font-weight:700;font-size:15.5px;color:var(--ink)">What is the difference between CGST, SGST and IGST?<span data-chev style="color:var(--teal);transition:transform .2s">▾</span></button>
+        <div data-open="0" style="max-height:0;overflow:hidden;transition:max-height .25s ease"><p style="padding:0 20px 18px;color:var(--muted);font-size:14.5px;line-height:1.6">For supply within a state, GST splits equally into CGST (to the centre) and SGST (to the state). For supply between states, a single IGST is charged instead, at the same total rate.</p></div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden">
+        <button onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:none;cursor:pointer;padding:18px 20px;text-align:left;font-family:'DM Sans';font-weight:700;font-size:15.5px;color:var(--ink)">What does "remove GST" mean?<span data-chev style="color:var(--teal);transition:transform .2s">▾</span></button>
+        <div data-open="0" style="max-height:0;overflow:hidden;transition:max-height .25s ease"><p style="padding:0 20px 18px;color:var(--muted);font-size:14.5px;line-height:1.6">When a price already includes GST, "remove GST" works backwards to find the original base price and the tax component within that inclusive amount.</p></div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden">
+        <button onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:none;cursor:pointer;padding:18px 20px;text-align:left;font-family:'DM Sans';font-weight:700;font-size:15.5px;color:var(--ink)">Which GST rate should I use?<span data-chev style="color:var(--teal);transition:transform .2s">▾</span></button>
+        <div data-open="0" style="max-height:0;overflow:hidden;transition:max-height .25s ease"><p style="padding:0 20px 18px;color:var(--muted);font-size:14.5px;line-height:1.6">The rate depends on the specific good or service (its HSN/SAC code). Common slabs are 5%, 12%, 18% and 28% — check the official rate for your category before filing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="max-width:1100px;margin:0 auto;padding:56px 24px">
+    <div style="background:linear-gradient(135deg,var(--navy),var(--teal));border-radius:24px;padding:48px;text-align:center;color:#fff">
+      <h2 style="font-family:'Manrope';font-weight:800;font-size:30px;letter-spacing:-.5px">More tools on Banking2Day</h2>
+      <p style="font-size:16px;opacity:.9;margin:10px 0 0">Compare loans, cards and deposits, or run another calculator.</p>
+      <a href="Banking2Day.dc.html#how" style="display:inline-block;text-decoration:none;background:#fff;color:var(--navy);font-weight:700;font-size:16px;padding:14px 30px;border-radius:12px;margin-top:24px" style-hover="filter:brightness(.96)">Explore calculators</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--navy-d);color:#9FB3C4">
+    <div style="max-width:1100px;margin:0 auto;padding:30px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:12.5px">
+      <span>Banking2Day is an information and comparison platform, not a bank, NBFC or tax adviser. Figures are indicative.</span>
+      <a href="Banking2Day.dc.html" style="color:#fff;text-decoration:none;font-weight:600" style-hover="opacity:.8">← Back to Banking2Day</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:720}}">
+class Component extends DCLogic {
+  state = { amount: 10000, rate: 18, mode: "add" };
+
+  fmtINR(n){
+    n = Math.round((Number(n) || 0) * 100) / 100;
+    const neg = n < 0; n = Math.abs(n);
+    const parts = n.toFixed(2).split('.');
+    let s = parts[0], last3 = s.slice(-3), rest = s.slice(0, -3);
+    if (rest) { last3 = ',' + last3; rest = rest.replace(/\B(?=(\d{2})+(?!\d))/g, ','); }
+    let dec = parts[1] === '00' ? '' : '.' + parts[1];
+    return (neg ? '-' : '') + '₹' + rest + last3 + dec;
+  }
+
+  renderVals(){
+    const isAdd = this.state.mode === "add";
+    const rate = this.state.rate;
+    let base, gst, total;
+    if (isAdd){ base = this.state.amount; gst = base * rate / 100; total = base + gst; }
+    else { total = this.state.amount; base = total / (1 + rate / 100); gst = total - base; }
+
+    const rateDefs = [5, 12, 18, 28];
+    const rates = rateDefs.map(v => {
+      const active = rate === v;
+      return { val: v, label: v + "%",
+        bg: active ? "var(--mint)" : "#fff",
+        color: active ? "var(--teal-d)" : "var(--ink)",
+        border: active ? "var(--teal)" : "var(--line)" };
+    });
+
+    return {
+      amount: this.state.amount,
+      amountStr: this.state.amount.toLocaleString('en-IN'),
+      amtPct: (((this.state.amount - 100) / (1000000 - 100)) * 100).toFixed(1),
+      amountLabel: isAdd ? "Amount (before GST)" : "Amount (including GST)",
+      rates, rate, rateStr: rate.toString(),
+      halfRateStr: (rate / 2).toString(),
+      modeHint: isAdd ? "GST is added on top of the amount you enter." : "GST is extracted from a GST-inclusive amount.",
+      addBg: isAdd ? "var(--teal)" : "#fff", addColor: isAdd ? "#fff" : "var(--ink)", addBorder: isAdd ? "var(--teal)" : "var(--line)",
+      remBg: !isAdd ? "var(--teal)" : "#fff", remColor: !isAdd ? "#fff" : "var(--ink)", remBorder: !isAdd ? "var(--teal)" : "var(--line)",
+      gstStr: this.fmtINR(gst),
+      baseStr: this.fmtINR(base),
+      halfStr: this.fmtINR(gst / 2),
+      totalStr: this.fmtINR(total),
+      setAdd: () => this.setState({ mode: "add" }),
+      setRemove: () => this.setState({ mode: "remove" }),
+      setRate: (e) => this.setState({ rate: Number(e.currentTarget.getAttribute("data-rate")) }),
+      onAmount: (e) => this.setState({ amount: Number(e.target.value) }),
+      onAmountText: (e) => { let v = Number(String(e.target.value).replace(/[^\d]/g, "")) || 0; this.setState({ amount: Math.max(0, Math.min(1000000, v)) }); },
+      toggleFaq: (e) => {
+        const btn = e.currentTarget, ans = btn.nextElementSibling;
+        const open = ans.getAttribute('data-open') === '1';
+        ans.setAttribute('data-open', open ? '0' : '1');
+        ans.style.maxHeight = open ? '0px' : ans.scrollHeight + 'px';
+        const chev = btn.querySelector('[data-chev]');
+        if (chev) chev.style.transform = open ? 'rotate(0deg)' : 'rotate(180deg)';
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

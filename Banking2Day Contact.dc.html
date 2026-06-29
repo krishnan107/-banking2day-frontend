@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#fff}
+@media(max-width:900px){[data-r=navlinks]{display:none!important}[data-r=contact]{grid-template-columns:1fr!important}[data-r=h1]{font-size:34px!important}}
+</style>
+</helmet>
+<div style="--navy:#0B3B60;--navy-d:#082B47;--teal:#0E7C66;--teal-d:#0A6450;--amber:#F4B942;--ink:#17223B;--muted:#526171;--line:#DCE5EC;--surface:#F4F7FA;--mint:#E7F5F3;font-family:'DM Sans',sans-serif;color:#17223B;background:#fff;overflow-x:hidden">
+
+  <!-- HEADER -->
+  <header style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)">
+    <div style="max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:32px">
+      <a href="Banking2Day.dc.html" style="display:flex;align-items:center"><img src="uploads/banking2day-logo.png" alt="Banking2Day" style="height:36px;width:auto"/></a>
+      <nav data-r="navlinks" style="display:flex;gap:24px;margin-left:8px;font-weight:600;font-size:15px;color:#2B3A4B">
+        <a href="Banking2Day.dc.html#loans" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Loans</a>
+        <a href="Banking2Day.dc.html#cards" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Credit Cards</a>
+        <a href="Banking2Day.dc.html#how" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">Calculators</a>
+        <a href="Banking2Day About.dc.html" style="text-decoration:none;color:inherit" style-hover="color:var(--teal)">About</a>
+      </nav>
+      <a href="Banking2Day Loan Apply.dc.html" style="margin-left:auto;text-decoration:none;background:var(--teal);color:#fff;font-weight:700;font-size:15px;padding:11px 20px;border-radius:8px;box-shadow:0 8px 18px rgba(14,124,102,.22)" style-hover="background:var(--teal-d)">Check eligibility</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="background:linear-gradient(160deg,#0B3B60,#0E5A52);color:#fff">
+    <div style="max-width:1180px;margin:0 auto;padding:60px 24px 52px">
+      <div style="font-size:13px;color:#9FD8C7;font-weight:700;letter-spacing:1.5px">CONTACT US</div>
+      <h1 data-r="h1" style="font-family:'Manrope';font-weight:800;font-size:46px;letter-spacing:-1px;margin:12px 0 0;max-width:780px;line-height:1.1">We'd love to hear from you.</h1>
+      <p style="font-size:18px;color:#C3D5E2;margin:16px 0 0;max-width:620px;line-height:1.6">Questions, feedback or a correction to a comparison? Send a note and our team will get back during support hours.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section style="max-width:1180px;margin:0 auto;padding:64px 24px 64px">
+    <div data-r="contact" style="display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start">
+      <div>
+        <div style="color:var(--teal-d);font-weight:700;font-size:12px;letter-spacing:1.5px">REACH US</div>
+        <h2 style="font-family:'Manrope';font-weight:800;font-size:30px;letter-spacing:-.5px;color:var(--navy);margin:8px 0 0">Ways to get in touch</h2>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:24px">
+          <a href="mailto:hello@banking2day.com" style="display:flex;align-items:center;gap:13px;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;color:var(--ink)" style-hover="border-color:var(--teal)"><span style="width:42px;height:42px;flex:none;border-radius:11px;background:var(--mint);color:var(--teal);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2"/></svg></span><div><div style="font-weight:700;font-size:15px">Email us</div><div style="font-size:13.5px;color:var(--muted)">hello@banking2day.com</div></div></a>
+          <a href="tel:+918000000000" style="display:flex;align-items:center;gap:13px;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;color:var(--ink)" style-hover="border-color:var(--teal)"><span style="width:42px;height:42px;flex:none;border-radius:11px;background:var(--mint);color:var(--teal);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2a12 12 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><div><div style="font-weight:700;font-size:15px">Call support</div><div style="font-size:13.5px;color:var(--muted)">+91 80000 00000 · Mon–Sat, 10am–6pm</div></div></a>
+          <div style="display:flex;align-items:flex-start;gap:13px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px"><span style="width:42px;height:42px;flex:none;border-radius:11px;background:var(--mint);color:var(--teal);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21c5-4.5 7-8 7-11a7 7 0 10-14 0c0 3 2 6.5 7 11z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg></span><div><div style="font-weight:700;font-size:15px">Visit us</div><div style="font-size:13.5px;color:var(--muted)">Banking2Day, Bandra Kurla Complex, Mumbai 400051</div></div></div>
+        </div>
+        <div style="background:#FFF6E0;color:#8A6212;border-radius:12px;padding:14px 16px;margin-top:18px;font-size:13px;font-weight:600;display:flex;gap:9px;align-items:flex-start"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex:none;margin-top:1px"><rect x="5" y="10" width="14" height="10" rx="2" stroke="#8A6212" stroke-width="2"/><path d="M8 10V7a4 4 0 018 0v3" stroke="#8A6212" stroke-width="2"/></svg>Never share an OTP, PIN, CVV or password with anyone — including us.</div>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px">
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:30px 10px"><span style="width:56px;height:56px;border-radius:50%;background:var(--mint);display:flex;align-items:center;justify-content:center"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0E7C66"/><path d="M7.5 12.5l3 3 6-6.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div style="font-family:'Manrope';font-weight:800;font-size:20px;color:var(--navy);margin-top:16px">Thanks — message received</div><p style="font-size:14.5px;color:var(--muted);margin-top:8px;line-height:1.6">We'll reply to you during our next support window.</p></div>
+        </sc-if>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ onSubmit }}">
+            <div style="font-family:'Manrope';font-weight:800;font-size:18px;color:var(--navy)">Send us a message</div>
+            <label style="display:block;font-weight:600;font-size:13px;color:var(--ink);margin-top:16px">Name<input required value="{{ name }}" oninput="{{ onName }}" style="width:100%;margin-top:6px;border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;font-size:15px;font-family:'DM Sans';outline:none" style-focus="border-color:var(--teal)"/></label>
+            <label style="display:block;font-weight:600;font-size:13px;color:var(--ink);margin-top:14px">Email<input required type="email" value="{{ email }}" oninput="{{ onEmail }}" style="width:100%;margin-top:6px;border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;font-size:15px;font-family:'DM Sans';outline:none" style-focus="border-color:var(--teal)"/></label>
+            <label style="display:block;font-weight:600;font-size:13px;color:var(--ink);margin-top:14px">Message<textarea required rows="4" value="{{ message }}" oninput="{{ onMessage }}" style="width:100%;margin-top:6px;border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;font-size:15px;font-family:'DM Sans';outline:none;resize:vertical" style-focus="border-color:var(--teal)"></textarea></label>
+            <button type="submit" style="width:100%;margin-top:18px;border:none;cursor:pointer;background:var(--teal);color:#fff;font-family:'Manrope';font-weight:800;font-size:16px;padding:15px;border-radius:12px;box-shadow:0 12px 24px rgba(14,124,102,.26)" style-hover="background:var(--teal-d)">Send message</button>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Banking2Day Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:820}}">
+class Component extends DCLogic {
+  state = { name: "", email: "", message: "", sent: false };
+  renderVals(){
+    return {
+      name: this.state.name, email: this.state.email, message: this.state.message,
+      sent: this.state.sent, notSent: !this.state.sent,
+      onName: (e) => this.setState({ name: e.target.value }),
+      onEmail: (e) => this.setState({ email: e.target.value }),
+      onMessage: (e) => this.setState({ message: e.target.value }),
+      onSubmit: (e) => { e.preventDefault(); if (this.state.name.trim() && this.state.email.trim()) this.setState({ sent: true }); },
+    };
+  }
+}
+</script>
+</body>
+</html>
