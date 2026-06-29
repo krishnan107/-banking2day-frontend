@@ -1,7 +1,10 @@
-[build]
-  publish = "."
-
-[[redirects]]
-  from = "/*"
-  to = "/banking2day.dc.html"
-  status = 200
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="refresh" content="0;url=/banking2day.dc.html">
+  <title>Redirecting...</title>
+</head>
+<body>
+  <p>Redirecting to Banking2Day...</p>
+</body>
+</html>
